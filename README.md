@@ -6,8 +6,8 @@ NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was fa
 
 - [ ] Import all the codes from OJ (P 20)
 - [ ] Code implementation improvements
-    - [ ] 1000
-    - [ ] 10066
+    - [x] 1000
+    - [x] 10066
     - [ ] 10067
     - [ ] 10097
     - [ ] 10716
