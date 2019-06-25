@@ -49,7 +49,13 @@ NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was fa
     - [ ] 10885
     - [ ] 10887
     - [ ] 10889
+    - [ ] 10893
     - [ ] 10896
+    - [ ] 10897
+    - [ ] 10898
+    - [ ] 10899
+    - [ ] 10900
+    - [ ] 10901
     
     - I2P2
     
