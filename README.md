@@ -6,4 +6,5 @@ NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was fa
 
 - [ ] Import all the codes from OJ
 - [ ] Rewrite the missing codes
+    - [ ] 10758
 - [ ] Improve all the codes from OJ
