@@ -4,7 +4,7 @@ NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was fa
 
 ## To-do list
 
-- [ ] Import all the codes from OJ (P 15 --)
+- [ ] Import all the codes from OJ (P 12 --)
 
 - [ ] Code implementation improvements
     - I2P (I)
@@ -54,5 +54,10 @@ NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was fa
         - [ ] 10899
         - [ ] 10900
         - [ ] 10901
-    - I2P2
+    - I2P (II)
+        - [ ] 10949
+        - [ ] 10950
+        - [ ] 10954
+        - [ ] 10961
+        - [ ] 10966
     - DS
