@@ -4,12 +4,14 @@ NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was fa
 
 ## To-do list
 
-- [ ] Import all the codes from OJ (P 20)
+- [ ] Import all the codes from OJ (P 19)
 - [ ] Code implementation improvements
     - [ ] 1000
     - [ ] 10066
     - [ ] 10067
     - [ ] 10097
+    - [ ] 10099
+    - [ ] 10162
     - [ ] 10716
     - [ ] 10739
     - [ ] 10758
@@ -20,3 +22,9 @@ NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was fa
     - [ ] 10772
     - [ ] 10773
     - [ ] 10774
+    - [ ] 10806
+    - [ ] 10808
+    - [ ] 10811
+    - [ ] 10824
+    - [ ] 10825
+    - [ ] 10833
