@@ -4,7 +4,19 @@ NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was fa
 
 ## To-do list
 
-- [ ] Import all the codes from OJ
-- [ ] Rewrite the missing codes
+- [ ] Import all the codes from OJ (P 20)
+- [ ] Code implementation improvements
+    - [ ] 1000
+    - [ ] 10066
+    - [ ] 10067
+    - [ ] 10097
+    - [ ] 10716
+    - [ ] 10739
     - [ ] 10758
-- [ ] Improve all the codes from OJ
+    - [ ] 10759
+    - [ ] 10768
+    - [ ] 10769
+    - [ ] 10770
+    - [ ] 10772
+    - [ ] 10773
+    - [ ] 10774
