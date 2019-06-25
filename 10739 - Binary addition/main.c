@@ -1,38 +1,58 @@
 // Problem: http://140.114.86.238/problem/10739/
 #include <stdio.h>
 
-int power(int, int);
+int tm(int, int);
 
 int main(void)
 {
-    int i, outnum;
-    int j;
-    int output[8] = {0}, routput[9] = {0};
-    scanf("%d %d", &routput[8], &outnum);
+    int i, j, carries;
+    int num[11] = {0};
+    int rnum[12] = {0};
+    scanf("%d", &rnum[11]);
+    int add = 1;
+    int r, q;
     
-    i = 7;
+    
+    i = 10;
+    
     while (i>=0)
     {
-        output[i] = routput[i+1]/(power(3, i));
-        routput[i] = routput[i+1]%(power(3, i));
+        num[i] = rnum[i+1]/(tm(2, i));
+        rnum[i] = rnum[i+1]%(tm(2, i));
         i--;
     }
     
-    j = outnum - 1;
-    while (j>=0) printf("%d", output[j--]);
+    carries = 0;
     
-    printf("\n");
+    j = 0;
+    while (add==1)
+    {
+        r = (num[j]+add)%2;
+        q = (num[j]+add)/2;
+        if (num[j]+add==2)
+        {
+            carries++;
+        }
+        num[j] = r;
+        add = q;
+        j++;
+    }
     
-    return 0;
+    i = 10;
+    
+    while (num[i]==0) i--;
+    while (i>=0) printf("%d", num[i--]);
+    
+    printf(" %d", carries);
+    
 }
 
-int power(int number, int times)
-{
-    int i = 0, n = 1;
-    while (i<times)
+int tm(int number, int times)
+{   int n = 1;
+    int i;
+    for (i=0; i<times; i++)
     {
-        n = number * n;
-        i++;
+        n = n*number;
     }
     
     return n;
