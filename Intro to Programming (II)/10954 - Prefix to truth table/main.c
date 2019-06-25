@@ -1,61 +1,62 @@
 // Problem: http://140.114.86.238/problem/10954/
 #include <stdio.h>
 
-int i;
-char array[100];
+char expr[200];
+int pos;
 
-int evalBoolExpr(int a, int b, int cc, int d)
+int exec(int a, int b, int c, int d)
 {
-    i++;
+    char chat;
     
-    char op1, op2;
+    int op1, op2;
     
-    if (array[i] == '&')
+    chat = expr[pos++];
+    
+    if (chat == '&')
     {
-        op1 = evalBoolExpr(a, b, cc, d);
-        op2 = evalBoolExpr(a, b, cc, d);
-        return op1 & op2;
-    } else if (array[i] == '|')
+        op1 = exec(a, b, c, d);
+        op2 = exec(a, b, c, d);
+        return op1 && op2;
+    } else if (chat == '|')
     {
-        op1 = evalBoolExpr(a, b, cc, d);
-        op2 = evalBoolExpr(a, b, cc, d);
-        return op1 | op2;
-    } else if (array[i] == 'A') {
+        op1 = exec(a, b, c, d);
+        op2 = exec(a, b, c, d);
+        return op1 || op2;
+    } else if (chat == 'A')
+    {
         return a;
-    } else if (array[i] == 'B') {
+    } else if (chat == 'B')
+    {
         return b;
-    } else if (array[i] == 'C') {
-        return cc;
-    } else if (array[i] == 'D') {
+    } else if (chat == 'C')
+    {
+        return c;
+    } else if (chat == 'D')
+    {
         return d;
     }
-    
     return -1;
 }
 
-int main()
+int main(void)
 {
-    scanf("%s", array);
-    
-    int a, b, c, d;
-    
-    for (a = 0; a < 2; a++)
+    scanf("%s", expr);
+    int i, j, k, l, output;
+    for (i = 0; i<2; i++)
     {
-        for (b = 0; b < 2; b++)
+        for (j = 0; j<2; j++)
         {
-            for (c = 0; c < 2; c++)
+            for (k = 0; k<2; k++)
             {
-                for (d = 0; d < 2; d++)
+                for (l = 0; l<2; l++)
                 {
-                    i = -1;
-                    int output = evalBoolExpr(a, b, c, d);
-                    printf("%d %d %d %d %d\n", a, b, c, d, output);
+                    pos = 0;
+                    output = exec(i, j, k, l);
+                    printf("%d %d %d %d %d\n", i, j, k, l, output);
                 }
             }
         }
     }
-    
-    
     return 0;
 }
 

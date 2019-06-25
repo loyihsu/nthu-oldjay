@@ -1,51 +1,58 @@
 // Problem: http://140.114.86.238/problem/10949/
-#include <stdio.h>
-#include <stdlib.h>
 #include "function.h"
 
 int maxValue(Node *tree)
 {
-    Node *lc, *rc;
-    
-    int output, temp1, temp2;
-    
-    if (tree)
+    int rootmax = 0, leftmax = 0, rightmax = 0, tempr = 0, templ = 0;
+    int maximum = 0;
+    Node *temp;
+    if (tree != NULL)
     {
-        int rootmax = tree->data;
-        output = rootmax;
+        rootmax = tree->data;
     }
     
-    if (tree->left)
+    if (tree->left != NULL)
     {
-        int leftmax = tree->left->data;
-        for (lc = tree->left; lc != NULL; lc = lc->left)
+        for (temp = tree->left; temp != NULL; temp = temp->left)
         {
-            if (lc->data > leftmax) leftmax = lc->data;
-            if (lc->right)
+            if (temp->data > leftmax)
             {
-                temp1 = maxValue(lc->right);
-                if (temp1 > leftmax) leftmax = temp1;
+                leftmax = temp->data;
+            }
+            if (temp->right != NULL)
+            {
+                tempr = maxValue(temp->right);
+                if (tempr > leftmax)
+                    leftmax = tempr;
             }
         }
-        if (leftmax > output) output = leftmax;
     }
     
-    if (tree->right)
+    if (tree->right != NULL)
     {
-        int rightmax = tree->right->data;
-        
-        for (rc = tree->right; rc != NULL; rc = rc->right)
+        for (temp = tree->right; temp != NULL; temp = temp->right)
         {
-            if (rc->data > rightmax) rightmax = rc->data;
-            if (rc->left)
+            if (temp->data > rightmax)
             {
-                temp2 = maxValue(rc->left);
-                if (temp2 > rightmax) rightmax = temp2;
+                rightmax = temp->data;
+            }
+            if (temp->left != NULL)
+            {
+                templ = maxValue(temp->left);
+                if (templ > leftmax)
+                    rightmax = templ;
             }
         }
-        
-        if (rightmax > output) output = rightmax;
     }
     
-    return output;
+    if (rootmax > maximum)
+        maximum = rootmax;
+    
+    if (rightmax > maximum)
+        maximum = rightmax;
+    
+    if (leftmax > maximum)
+        maximum = leftmax;
+    
+    return maximum;
 }

@@ -1,57 +1,52 @@
 // Problem: http://140.114.86.238/problem/10961/
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-int calculator()
+int EXPR();
+
+int main(void)
 {
-    int op1, op2;
+    int output;
+    
+    output = EXPR();
+    
+    printf("%d", output);
+    
+    return 0;
+}
+
+int EXPR()
+{
     char c = getchar();
+    char number[200];
+    
+    int op1, op2;
+    
     if (c == ' ')
     {
         c = getchar();
     }
     
-    if (c == '+')
+    if (c == '-')
     {
-        op1 = calculator();
-        op2 = calculator();
+        op1 = EXPR();
+        op2 = EXPR();
+        return op1 - op2;
+    } else if (c == '+')
+    {
+        op1 = EXPR();
+        op2 = EXPR();
         return op1 + op2;
-    } else if (c == '-')
-    {
-        op1 = calculator();
-        op2 = calculator();
-        return op1-op2;
     } else {
-        char d = getchar();
-        char e[100];
-        memset(e, 0, sizeof(char)*100);
-        int ic = c - '0';
+        number[0] = c;
         int i = 1;
-        
-        if (d == ' ')
+        while (c != ' ')
         {
-            return ic;
-        } else {
-            e[0] = c;
-            e[1] = d;
-            i = 2;
-            while (d != ' ')
-            {
-                d = getchar();
-                e[i] = d;
-                i++;
-            }
-            return atoi(e);
+            c = getchar();
+            number[i] = c;
+            i++;
         }
+        return atoi(number);
     }
-}
-
-int main(void)
-{
-    int output = calculator();
-    
-    printf("%d", output);
-    
-    return 0;
+    return -1;
 }
