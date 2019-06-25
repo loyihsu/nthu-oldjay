@@ -1,6 +1,6 @@
 # NTHU-OldJay
 
-NTHU-OldJay includes all the solutions to the old NTHU OJ problems that I was faced with as I learned to programme in C, C++, and learned basic data structure in NTHU. You are free to use the codes in NTHU-OldJay.
+NTHU-OldJay includes the solutions to the old NTHU Online Judge(OJ) problems I was faced with as I learned to programme in NTHU. These may include the problems from Introduction to Programming (I) and (II), Data Structure, and some other questions that I have practiced on the OJ system. The codes will be edited and tested in the system to ensure that they work. If something goes wrong please let me know, I will look into it. You are free to use any of the codes of NTHU-OldJay.
 
 ## To-do list
 
