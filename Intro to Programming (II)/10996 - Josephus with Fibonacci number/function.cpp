@@ -4,43 +4,43 @@
 
 Josephus::Josephus()
 {
-    head = NULL;
-    int i;
-    for (i = 0; i < 50; i++)
+    for (int i = 0; i < 50; i++)
         sequence[i] = 0;
     noOfPeople = 0;
+    head = nullptr;
 }
 
 Josephus::~Josephus()
 {
-    delete head;
+    for (int i = 0; i < 50; i++)
+        sequence[i] = 0;
+    noOfPeople = 0;
+    head = nullptr;
 }
 
-Josephus::Josephus(const int &integer)
+Josephus::Josephus(const int &no)
 {
-    head = NULL;
-    int i;
-    for (i = 0; i < 50; i++)
+    for (int i = 0; i < 50; i++)
         sequence[i] = 0;
-
-    noOfPeople = integer;
-    generateFib(integer);
-    generatecircularlinkedList(integer);
+    noOfPeople = no;
+    head = nullptr;
+    
+    generateFib(no);
+    generatecircularlinkedList(no);
 }
 
 int Josephus::kill()
 {
-    
     Node *prev, *temp;
     
-    prev = temp = head;
+    temp = prev = head;
     
-    int i, j = 0, k, remain = 0, flag = 0;
+    int k = 0, i = 0, j = 0, flag = 0, remain = 0;
     
     while (temp != temp->next)
     {
         k = sequence[j++];
-    
+        
         if (k == 1 && flag == 0)
         {
             for (i = 0; i < noOfPeople; i++)
@@ -48,61 +48,65 @@ int Josephus::kill()
                 prev = temp;
                 temp = temp->next;
             }
+            
             prev->next = temp->next;
             noOfPeople--;
             temp = prev->next;
             flag = 1;
         } else {
             remain = k % noOfPeople;
+            
             if (remain == 0)
                 remain = noOfPeople;
+            
             for (i = 0; i < remain - 1; i++)
             {
                 prev = temp;
                 temp = temp->next;
             }
+            
             prev->next = temp->next;
-            noOfPeople--;
             temp = prev->next;
+            noOfPeople--;
         }
     }
     
     return temp->number;
 }
 
-void Josephus::generatecircularlinkedList(const int &number)
+void Josephus::generatecircularlinkedList(const int &no)
 {
-    Node *temp = NULL;
-    
-    for (int i = 1; i <= number; i++)
+    for (int i = 1; i <= no; i++)
     {
-        if (head == NULL)
+        if (head == nullptr)
+        {
             head = new Node(i);
-        else {
-            temp = head;
-            while (temp->next != NULL)
+        } else {
+            Node *temp = head;
+            while (temp->next != nullptr)
             {
                 temp = temp->next;
             }
+            
             temp->next = new Node(i);
         }
     }
     
-    temp = head;
-    while (temp->next != NULL)
+    Node *temp = head;
+    while (temp->next != nullptr)
+    {
         temp = temp->next;
+    }
     temp->next = head;
+    
 }
 
-void Josephus::generateFib(const int &number)
+void Josephus::generateFib(const int &no)
 {
+    int pos = 0;
     sequence[0] = 1;
     sequence[1] = 1;
     
-    for (int i = 2; i < number; i++)
-        sequence[i] = sequence[i-1] + sequence[i-2];
-    
-    return;
+    for (pos = 2; pos < 50; pos++)
+        sequence[pos] = sequence[pos-1] + sequence[pos-2];
 }
-
-

@@ -1,6 +1,5 @@
 // Problem: http://140.114.86.238/problem/
 #include <iostream>
-#include <stdlib.h>
 #include <string>
 #include "function.h"
 
@@ -16,13 +15,12 @@ OWList::~OWList()
 
 void OWList::insertAtFront(const int &value)
 {
-    ListNode *newNode;
-    newNode = (ListNode*)malloc(sizeof(ListNode));
-    *newNode = ListNode(value);
-    if (firstPtr == NULL)
+    if (firstPtr == nullptr)
     {
-        firstPtr = lastPtr = newNode;
+        firstPtr = new ListNode(value);
+        lastPtr = firstPtr;
     } else {
+        ListNode *newNode = new ListNode(value);
         newNode->nextPtr = firstPtr;
         firstPtr = lastPtr = newNode;
     }
@@ -30,22 +28,22 @@ void OWList::insertAtFront(const int &value)
 
 void OWList::removeFromFront()
 {
-    if (firstPtr != nullptr)
+    if (firstPtr)
     {
-        if (firstPtr->nextPtr != nullptr)
+        if (firstPtr->nextPtr)
         {
             firstPtr = firstPtr->nextPtr;
-            lastPtr = firstPtr;
         } else {
+            delete firstPtr;
             firstPtr = nullptr;
-            lastPtr = firstPtr;
         }
+        lastPtr = firstPtr;
     }
 }
 
 bool OWList::isEmpty() const
 {
-    if (firstPtr == NULL)
+    if (firstPtr == nullptr)
         return true;
     else
         return false;
@@ -53,9 +51,7 @@ bool OWList::isEmpty() const
 
 void OWList::print() const
 {
-    ListNode *temp;
-    temp = firstPtr;
-    
+    ListNode *temp = firstPtr;
     while (temp != nullptr)
     {
         std::cout << temp->data;
@@ -67,45 +63,34 @@ void OWList::print() const
 
 void TWList::insertAtBack(const int &value)
 {
-    ListNode *newNode;
-    newNode = (ListNode*)malloc(sizeof(ListNode));
-    *newNode = ListNode(value);
-    if (firstPtr == NULL)
+    if (firstPtr == nullptr)
     {
-        firstPtr = lastPtr = newNode;
-    } else {
-        ListNode *temp;
-        temp = firstPtr;
-        
-        while (temp->nextPtr != nullptr)
-        {
-            temp = temp->nextPtr;
-        }
-        temp->nextPtr = newNode;
-        
+        firstPtr = new ListNode(value);
         lastPtr = firstPtr;
+        return;
     }
+    
+    while (lastPtr->nextPtr != nullptr)
+    {
+        lastPtr = lastPtr->nextPtr;
+    }
+    lastPtr->nextPtr = new ListNode(value);
+    lastPtr = firstPtr;
 }
 
 void TWList::removeFromBack()
 {
-    if (firstPtr != nullptr)
+    if (lastPtr != nullptr)
     {
-        if (firstPtr->nextPtr != nullptr)
+        ListNode *prev = lastPtr;
+        while (lastPtr->nextPtr != nullptr)
         {
-            ListNode *temp, *prev = firstPtr;
-            temp = firstPtr;
-            while (temp->nextPtr != nullptr)
-            {
-                prev = temp;
-                temp = temp->nextPtr;
-            }
-            
-            prev->nextPtr = NULL;
-            lastPtr = nullptr;
-        } else {
-            firstPtr = nullptr;
-            lastPtr = firstPtr;
+            prev = lastPtr;
+            lastPtr = lastPtr->nextPtr;
         }
+
+        prev->nextPtr = nullptr;
+        delete lastPtr;
+        lastPtr = firstPtr;
     }
 }

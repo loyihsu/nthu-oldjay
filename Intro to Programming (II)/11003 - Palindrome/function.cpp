@@ -2,64 +2,74 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
-#include <cstdio>
 #include "function.h"
 
-SimpleString::SimpleString(char *c, int a)
+SimpleString::SimpleString(char *ch, int s)
 {
-    if (ptr == NULL)
-        ptr = (char*)malloc(sizeof(c));
-    if (c != NULL)
-        strcpy(ptr, c);
-    size = a;
-    return;
+    int size_;
+    
+    if (s > 0)
+        size_ = 1;
+    else {
+        size_ = s;
+    }
+    
+    if (ptr == nullptr)
+        ptr = (char*)calloc(size_, sizeof(char));
+
+    
+    if (ch != nullptr)
+        strcpy(ptr, ch);
+    
+    size = s;
 }
 
-SimpleString::SimpleString(const SimpleString &SS)
+SimpleString::SimpleString(const SimpleString &ss)
 {
-    strcpy(ptr, SS.ptr);
-    size = SS.size;
-    return;
+    if (ptr == nullptr)
+        ptr = (char*)calloc(ss.size, sizeof(char));
+    
+    size = ss.size;
+    strcpy(ptr, ss.ptr);
 }
 
 SimpleString::~SimpleString()
 {
-    size = 0;
     memset(ptr, 0, sizeof(char));
-    return;
+    size = 0;
 }
 
-const SimpleString &SimpleString::operator=(const SimpleString &SS)
+const SimpleString &SimpleString::operator=( const SimpleString &ss )
 {
-    if (&SS != this)
+    if (&ss != this)
     {
-        size = SS.size;
-        if (ptr == NULL)
-            ptr = (char*)malloc(sizeof(char));
-        strcpy(ptr, SS.ptr);
+        if (ptr == nullptr)
+            ptr = (char*)calloc(ss.size, sizeof(char));
+        strcpy(ptr, ss.ptr);
+        size = ss.size;
     }
+    
     return *this;
 }
 
-bool SimpleString::operator==(const SimpleString &string) const
+bool SimpleString::operator==( const SimpleString &ss ) const
 {
-    if (strcmp(ptr, string.ptr) == 0) return true;
+    if (!strcmp(ptr,ss.ptr)) return true;
     else return false;
 }
 
 void SimpleString::reverse()
 {
+    char *temp = (char*)calloc(size, sizeof(char));
     int i;
-    SimpleString temp;
-    
-    temp.ptr = (char*)malloc(size*sizeof(char));
     
     for (i = 0; i < size; i++)
     {
-        temp.ptr[i] = ptr[size-i-1];
+        temp[i] = ptr[size-1-i];
     }
     
-    strcpy(ptr, temp.ptr);
-    
-    return;
+    strcpy(ptr, temp);
 }
+
+
+

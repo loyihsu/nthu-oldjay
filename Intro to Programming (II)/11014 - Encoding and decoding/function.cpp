@@ -7,37 +7,41 @@
 
 void RleCodec::encode()
 {
-    int num = 0;
+    std::string output;
+    int num = 0, i;
+    
     char last;
-    std::string os;
+    
     auto append = [&]() -> void
     {
         if (num <= 2)
         {
-            for (int i = 0; i < num; i++)
-                os.push_back(last);
+            for (i = 0; i < num; i++)
+            {
+                output.push_back(last);
+            }
         } else {
-            os += std::to_string(num) + last;
+            output += std::to_string(num) + last;
         }
+        
     };
     
     if (!code_str.empty())
     {
-        last = code_str.at(0);
-        for (auto c: code_str)
+        last = code_str[0];
+        for (auto c : code_str)
         {
-            if (c == last)
-                num++;
+            if (c == last) num++;
             else {
                 append();
-                last = c;
                 num = 1;
+                last = c;
             }
         }
         append();
     }
     
-    code_str = os;
+    code_str = output;
     encoded = true;
 }
 
