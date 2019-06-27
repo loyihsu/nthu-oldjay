@@ -1,63 +1,53 @@
 // Problem: http://140.114.86.238/problem/10997
 #include <iostream>
 #include <string.h>
-#include <stdlib.h>
 #include "function.h"
 
 List_queue::List_queue()
 {
-    head = tail = NULL;
-    return;
+    head = tail = nullptr;
 }
 
 List_queue::~List_queue()
 {
-    head = NULL;
-    tail = NULL;
-    return;
+    head = tail = nullptr;
 }
 
 void List_queue::enqueue(const int &number)
 {
-    
-    ListNode *temp, *cur = NULL;
-    temp = (ListNode*)malloc(sizeof(ListNode));
-    
-    *temp = ListNode(number);
-    
-    if (tail == NULL)
+    ListNode *temp;
+    if (head == nullptr)
     {
-        head = tail = temp;
+        head = tail = new ListNode(number);
     } else {
-        cur = tail;
-        while (cur->nextPtr != NULL)
-            cur = cur->nextPtr;
-        cur->nextPtr = temp;
+        temp = head;
+        while (temp->nextPtr != nullptr)
+        {
+            temp = temp->nextPtr;
+        }
+        temp->nextPtr = new ListNode(number);
+        
     }
 }
 
 void List_queue::dequeue()
 {
-    if (head != NULL)
-    {
-        head = tail = head->nextPtr;
+    if (head) {
+        if (head->nextPtr)
+            head = head->nextPtr;
+        else head = nullptr;
     }
-    else
-        head = tail = NULL;
-    return;
 }
 
 void List_queue::print()
 {
-    while (head != NULL)
+    ListNode *temp = head;
+    
+    while (temp != nullptr)
     {
-        std::cout << head->data;
-        if (head->nextPtr != NULL)
+        std::cout << temp->data;
+        if (temp->nextPtr != nullptr)
             std::cout << " ";
-        head = head->nextPtr;
+        temp = temp->nextPtr;
     }
-    
-    head = tail;
-    
-    return;
 }

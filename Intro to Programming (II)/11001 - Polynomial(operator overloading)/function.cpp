@@ -1,18 +1,16 @@
 // Problem: http://140.114.86.238/problem/11001
 #include <iostream>
-#include <iomanip>
-#include <stdio.h>
 #include <string>
 #include "function.h"
 
 std::ostream &operator<<(std::ostream &os, const Polynomial &pol)
 {
-    for (int i = pol.greatestPower; i >= 0 ; i--)
+    int i;
+    for (i = pol.greatestPower; i >= 0 ; i--)
     {
-        if (i != pol.greatestPower)
-            os << " " << pol.coefficients[i];
-        else
-            os << pol.coefficients[i];
+        os << pol.coefficients[i];
+        if (i != 0)
+            os << " ";
     }
     return os;
 }
@@ -20,66 +18,60 @@ std::ostream &operator<<(std::ostream &os, const Polynomial &pol)
 Polynomial::Polynomial()
 {
     int i;
-    for (i = 0; i < 101; i++)
+    
+    for (i = 0 ; i < 101; i++)
         coefficients[i] = 0;
     greatestPower = 0;
-    
-    return;
 }
 
-Polynomial::Polynomial(const int &power, const int arr[51])
+Polynomial::Polynomial(const int &gp, const int array[51])
 {
     int i;
-    for (i = 0; i < 101; i++)
+    
+    for (i = 0 ; i < 101; i++)
         coefficients[i] = 0;
-    greatestPower = 0;
+    greatestPower = gp;
     
-    for (i = 0; i <= power; i++)
-        coefficients[i] = arr[i];
-    greatestPower = power;
-    
-    return;
+    for (i = 0; i <= gp; i++)
+        coefficients[i] = array[i];
 }
 
-Polynomial Polynomial::operator+(const Polynomial &plusee) const
+Polynomial Polynomial::operator+( const Polynomial &ee ) const
 {
     Polynomial output;
     int i;
-    int greaterP = (greatestPower >= plusee.greatestPower)? greatestPower: plusee.greatestPower;
     
-    for (i = 0; i <= greaterP; i++)
-        output.coefficients[i] = coefficients[i] + plusee.coefficients[i];
+    output.greatestPower = (greatestPower > ee.greatestPower) ? greatestPower : ee.greatestPower;
     
-    output.greatestPower = greaterP;
+    for (i = 0; i <= output.greatestPower; i++)
+        output.coefficients[i] = coefficients[i] + ee.coefficients[i];
     
     return output;
 }
 
-Polynomial Polynomial::operator-(const Polynomial &minusee) const
+Polynomial Polynomial::operator-( const Polynomial &ee ) const
 {
     Polynomial output;
-    
     int i;
-    int greaterP = (greatestPower >= minusee.greatestPower)? greatestPower: minusee.greatestPower;
     
-    for (i = 0; i <= greaterP; i++)
-        output.coefficients[i] = coefficients[i] - minusee.coefficients[i];
+    output.greatestPower = (greatestPower > ee.greatestPower) ? greatestPower : ee.greatestPower;
     
-    output.greatestPower = greaterP;
+    for (i = 0; i <= output.greatestPower; i++)
+        output.coefficients[i] = coefficients[i] - ee.coefficients[i];
     
     return output;
 }
 
-Polynomial Polynomial::operator*(const Polynomial &mulee) const
+Polynomial Polynomial::operator*( const Polynomial &ee ) const
 {
     Polynomial output;
     int i, j;
     
-    for (i = 0; i <= greatestPower; i++)
-        for (j = 0; j <= mulee.greatestPower; j++)
-            output.coefficients[i+j] += coefficients[i] * mulee.coefficients[j];
+    output.greatestPower = greatestPower + ee.greatestPower;
     
-    output.greatestPower = greatestPower + mulee.greatestPower;
+    for (i = 0; i <= greatestPower; i++)
+        for (j = 0; j <= ee.greatestPower; j++)
+            output.coefficients[i+j] += coefficients[i] * ee.coefficients[j];
     
     return output;
 }

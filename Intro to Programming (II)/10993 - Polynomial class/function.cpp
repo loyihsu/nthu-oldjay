@@ -1,82 +1,74 @@
 // Problem: http://140.114.86.238/problem/10993
-#include <stdio.h>
-#include "function.h"
 #include <iostream>
+#include <stdio.h>
+#include <string>
+#include "function.h"
 
 Polynomial::Polynomial()
 {
     int i;
+    
     for (i = 0; i < 101; i++)
         coefficients[i] = 0;
     greatestPower = 0;
 }
 
-Polynomial::Polynomial(const int a, const int b[51])
+Polynomial::Polynomial(const int great, const int array[51])
 {
     int i;
+    
     for (i = 0; i < 101; i++)
         coefficients[i] = 0;
-    for (i = 0; i <= a; i++)
-        coefficients[i] = b[i];
-    greatestPower = a;
+    
+    greatestPower = great;
+    
+    for (i = 0; i <= great; i++)
+        coefficients[i] = array[i];
 }
 
-Polynomial Polynomial::add(const Polynomial addee) const
+Polynomial Polynomial::add( const Polynomial ee) const
 {
-    //MARK: Declare
     Polynomial output;
-    int gp2, i;
     
-    //MARK: Initialize
-    output = Polynomial();
-    gp2 = (greatestPower >= addee.greatestPower)? greatestPower:addee.greatestPower;
+    int i;
     
-    //MARK: Action
-    for (i = gp2; i >= 0; i--)
-    {
-        output.coefficients[i] = coefficients[i] + addee.coefficients[i];
-    }
-    output.greatestPower = gp2;
+    int gp = (greatestPower > ee.greatestPower)? greatestPower : ee.greatestPower;
+    
+    output.greatestPower = gp;
+    
+    for (i = 0; i <= gp; i++)
+        output.coefficients[i] = coefficients[i] + ee.coefficients[i];
     
     return output;
 }
 
-Polynomial Polynomial::subtract(const Polynomial subee) const
+Polynomial Polynomial::subtract( const Polynomial ee) const
 {
-    //MARK: Declare
     Polynomial output;
-    int gp2, i;
     
-    //MARK: Initialize
-    output = Polynomial();
-    gp2 = (greatestPower >= subee.greatestPower)? greatestPower:subee.greatestPower;
+    int i;
     
-    //MARK: Action
-    for (i = gp2; i >= 0; i--)
-        output.coefficients[i] = coefficients[i] - subee.coefficients[i];
-    output.greatestPower = gp2;
+    int gp = (greatestPower > ee.greatestPower)? greatestPower : ee.greatestPower;
+    
+    output.greatestPower = gp;
+    
+    for (i = 0; i <= gp; i++)
+        output.coefficients[i] = coefficients[i] - ee.coefficients[i];
     
     return output;
 }
 
-Polynomial Polynomial::multiplication(const Polynomial mulee) const
+Polynomial Polynomial::multiplication( const Polynomial ee) const
 {
-    //MARK: Declare
     Polynomial output;
+    
     int i, j;
     
-    //MARK: Initialize
-    output = Polynomial();
+    output.greatestPower = greatestPower + ee.greatestPower;
     
-    //MARK: Action
     for (i = 0; i <= greatestPower; i++)
-    {
-        for (j = 0; j <= mulee.greatestPower; j++)
-        {
-            output.coefficients[i+j] += coefficients[i] * mulee.coefficients[j];
-        }
-    }
-    output.greatestPower = greatestPower + mulee.greatestPower;
+        for (j = 0; j <= ee.greatestPower; j++)
+            output.coefficients[i+j] += coefficients[i] * ee.coefficients[j];
     
     return output;
 }
@@ -84,12 +76,11 @@ Polynomial Polynomial::multiplication(const Polynomial mulee) const
 void Polynomial::output() const
 {
     int i;
+    
     for (i = greatestPower; i >= 0; i--)
     {
         std::cout << coefficients[i];
         if (i != 0)
             std::cout << " ";
-        //else
-        //std::cout << "\n";
     }
 }
