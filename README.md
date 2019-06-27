@@ -6,7 +6,7 @@ The codes will be edited and tested in the system to ensure that they work. If s
 
 ## To-do list
 
-- [ ] Import all the codes from OJ (P 10 --)
+- [ ] Import all the codes from OJ (P 9 --)
 - [ ] Code implementation improvements
     - I2P (I)
         - [x] 1000
@@ -56,6 +56,7 @@ The codes will be edited and tested in the system to ensure that they work. If s
         - [ ] 10900
         - [ ] 10901
     - I2P (II)
+        - [ ] 10557
         - [ ] 10945
         - [ ] 10947
         - [ ] 10948
@@ -73,4 +74,6 @@ The codes will be edited and tested in the system to ensure that they work. If s
         - [ ] 10993
         - [ ] 10996
         - [ ] 10997
+        - [ ] 11001
+        - [ ] 11003
     - DS
