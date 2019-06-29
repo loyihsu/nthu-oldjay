@@ -1,79 +1,65 @@
 // Problem: http://140.114.86.238/problem/10477/
-#include <stdio.h>
 #include <iostream>
 #include <algorithm>
 
-char result[105];
-int key[100], k;
-std::string str, temp;
+int arr[105];
+std::string input;
+char output[105];
+int k;
 
-void find (int step, int position)
+void find(int cur, int pos)
 {
-    if (step == k)
+    if (cur == k)
     {
-        result[step] = '\0';
-        std::cout << result << "\n";
+        output[cur] = '\0';
+        std::cout << output << "\n";
         return;
     } else {
-        for (int b = position; b < str.size(); b += key[b])
+        for (int i = pos; i < input.size(); i+=arr[i])
         {
-            result[step] = str.at(b);
-            find(step+1, b+1);
+            output[cur] = input.at(i);
+            find(cur+1, i+1);
         }
     }
 }
-
 
 int main(void)
 {
     std::ios::sync_with_stdio(false);
     
-    int i = 0, j = 0, t, count;
+    int tcs, j, count;
     char last;
-    
-    auto append = [&count, &j]()->void
+    auto app = [&count, &j]()->void
     {
         while (count >= 1)
-        {
-            key[j++] = count--;
-        }
+            arr[j++] = count--;
     };
     
-    std::cin >> t;
+    std::cin >> tcs;
     
-    while (t--)
+    while (tcs--)
     {
-        str.clear();
-        temp.clear();
-        
-        for (i=0; i < 100; i++)
-            key[i] = 0;
-        
-        std::cin >> str;
-        std::cin >> k;
-        std::sort(str.begin(), str.end());
-        
-        last = str.at(0);
-        i = 0;
         j = 0;
         count = 0;
+        input.clear();
+        std::cin >> input >> k;
+        std::sort(input.begin(), input.end());
+        last = input.at(0);
         
-        for (auto s: str)
+        for (auto k: input)
         {
-            if (s == last)
-            {
+            if (k == last)
                 count++;
-            } else {
-                append();
-                last = s;
+            else {
+                app();
                 count = 1;
+                last = k;
             }
         }
-        append();
+        app();
         
-        find(0, 0);
+        find(0,0);
         std::cout << "\n";
     }
-    
     return 0;
 }
