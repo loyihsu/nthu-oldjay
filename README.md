@@ -98,15 +98,4 @@ The codes will be edited and tested in the system to ensure that they work. If s
         - [ ] 11053
         - [ ] 11055
     - [ ] Data Structure
-    - [ ] Others
-        - [ ] 10730
-        - [ ] 11099
-        - [ ] 12026
-        - [ ] 12027
-        - [ ] 12038
-        - [ ] 12125
-        - [ ] 12127
-        - [ ] 12133
-        - [ ] 12135
-        - [ ] 12138
-        - [ ] 12139
+    - [x] Others

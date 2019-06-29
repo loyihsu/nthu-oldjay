@@ -15,7 +15,6 @@ int main(void) {
     for (i = 0; i < n; i++) {
         scanf("%d", &a[i]);
     }
-    
     for (i = 0; i < n; i++)
     {
         for (j = 0; j < n; j++)
@@ -23,14 +22,10 @@ int main(void) {
             if (i != j) {
                 int cur = gcd(a[i],a[j]);
                 if (cur > max)
-                {
                     max = cur;
-                }
             }
         }
     }
-    
-    
     printf("%d\n", max);
     
     return 0;

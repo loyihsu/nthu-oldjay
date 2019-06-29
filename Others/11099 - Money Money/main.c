@@ -3,14 +3,9 @@
 
 int main(void) {
     int x, y, z;
-    
-    scanf("%d%d%d", &x, &y, &z);
-    
-    int jay   = (x + z - y)/2;
-    int jolin = (x + y - z)/2;
-    int jj    = (y + z - x)/2;
-    
-    printf("%d %d %d\n", jay, jolin, jj);
+
+    scanf("%d%d%d", &x, &y, &z);    
+    printf("%d %d %d\n", (x+z-y)/2, (x+y-z)/2, (y+z-x)/2);
     
     return 0;
 }

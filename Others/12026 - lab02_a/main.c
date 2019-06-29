@@ -8,18 +8,14 @@ int main(void) {
         scanf("%d", &sequence[i]);
         book[i] = 0;
     }
-    
     i = sequence[0]-1;
     sum = 0;
-    
     while (book[i] != 1) {
         book[i] = 1;
         sum += sequence[i];
         i = sequence[i]-1;
     }
-    
     printf("%d\n", sum);
     
     return 0;
 }
-

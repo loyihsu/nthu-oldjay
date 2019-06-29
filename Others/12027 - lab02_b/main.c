@@ -3,19 +3,16 @@
 
 int main(void) {
     int n, i, counter;
-    
-    double p[4], target, v[2], temp1, temp2;
+    double p[4], v[2], target, temp1, temp2;
     
     scanf("%d", &n);
     while(n--)
     {
         v[0] = 1;
         v[1] = 0;
-        
         for (i = 0; i < 4; i++)
             scanf("%lf",&p[i]);
         scanf("%lf", &target);
-        
         counter = 0;
         while (v[0] >= target) {
             temp1 = p[0] * v[0] + p[1] * v[1];
@@ -24,7 +21,6 @@ int main(void) {
             v[1] = temp2;
             counter++;
         }
-        
         printf("%d\n", counter);
     }
     
