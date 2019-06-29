@@ -5,9 +5,7 @@
 #include <algorithm>
 
 int main(void)
-{
-    //freopen("/Users/loyi/ownCloud/CPP/input", "r", stdin);
-    
+{   
     int ele;
     int i;
     int temp;

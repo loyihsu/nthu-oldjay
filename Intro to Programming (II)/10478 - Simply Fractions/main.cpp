@@ -1,83 +1,50 @@
 // Problem: http://140.114.86.238/problem/10478/
-#include <stdio.h>
 #include <iostream>
 #include <vector>
-
-struct fraction
-{
-    long long int d;
-    long long int n;
-};
-
-int gcd(long long int a, long long int b) {
-    return b == 0 ? a : gcd(b, a % b);
-}
-
-void reduce (long long int &num, long long int &den)
-{
-    long long int GCD = gcd(num, den);
-    
-    long long int absnum = (num < 0)? num * (-1): num;
-    long long int absden = (den < 0)? den * (-1): den;
-    long long int smaller = (absnum <= absden)? absnum : absden;
-
-    
-    num /= GCD;
-    den /= GCD;
-    
-    if (den < 0)
-    {
-        den *= -1;
-        num *= -1;
-    }
-}
-
-long long int SGS (long long int a, long long int b)
-{
-    long long int abs_a = (a < 0)? a * (-1): a;
-    long long int abs_b = (a < 0)? b * (-1): b;
-    long long int smaller = (a <= b)? a : b;
-    long long int GCD = gcd (a, b);
-    
-    return (abs_a*abs_b)/GCD;
-}
+#include <algorithm>
 
 int main(void)
 {
-    //freopen("/Users/loyi/ownCloud/CPP/input", "r", stdin);
+    std::ios::sync_with_stdio(false);
+    long long testcases, i, temp1, temp2;
+    std::vector<long long> num, den;
+    long long od, on;
     
-    long long int t;
-    std::vector<fraction> frac;
-    
-    while (std::cin >> t)
+    while (std::cin >> testcases)
     {
-        frac.clear();
+        num.clear();
+        den.clear();
+        od = 1;
+        on = 0;
+        i = testcases;
+        while (i--)
+        {
+            std::cin >> temp1 >> temp2;
+            num.push_back(temp1);
+            den.push_back(temp2);
+        }
         
-        long long int num = 0, den = 1;
+        for (auto d: den)
+        {
+            od = (od * d)/std::__gcd(od, d);
+        }
         
-        while (t--)
+        for (long long n = 0; n < num.size(); n++)
         {
-            fraction temp;
-            std::cin >> temp.n;
-            std::cin >> temp.d;
-            frac.push_back(temp);
+            on += num[n] * (od/den[n]);
         }
-    
-        num = 0, den = 1;
-    
-        for (auto f : frac)
+        
+        long long g = std::__gcd(od, on);
+        od /= g;
+        on /= g;
+        
+        if (od < 0)
         {
-            den = SGS(den, f.d);
+            od *= -1;
+            on *= -1;
         }
-
-        for (auto f : frac)
-        {
-            num += (f.n * (den / f.d));
-        }
-    
-        reduce(num, den);
-    
-        std::cout << num << "/" << den << "\n";
+        
+        std::cout << on << "/" << od << "\n";
     }
-    return 0;
+
 }
