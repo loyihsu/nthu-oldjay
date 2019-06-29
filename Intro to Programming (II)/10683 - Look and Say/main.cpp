@@ -1,53 +1,51 @@
 // Problem: http://140.114.86.238/problem/10683/
-#include <cstdio>
 #include <iostream>
 #include <string>
 
 int main(void)
-{
-    std::ios::sync_with_stdio(false);
-
-    int l, times;
-    std::cin >> l;
-    std::string num;
-    std::string output;
+{   
+    int tcs, times, count;
+    std::string str, output;
+    std::cin >> tcs;
     char last;
-    int count;
     
-    auto append = [&output, &count, &last]() ->void {
+    auto app = [&output, &count, &last]()->void
+    {
         output += std::to_string(count);
         output += last;
     };
     
-    while (l--)
+    while (tcs--)
     {
-        std::cin >> num;
+        str.clear();
+        std::cin >> str;
         std::cin >> times;
-        
         output.clear();
-        
         while (times--)
         {
             if (!output.empty())
-                num = output;
-            output.clear();
-            last = num.at(0);
-            count = 0;
-            for (auto n : num)
             {
-                if (last == n)
+                str = output;
+                output.clear();
+            }
+            
+            count = 0;
+            last = str.at(0);
+            for (auto s: str)
+            {
+                if (last == s)
                 {
                     count++;
                 } else {
-                    append();
-                    last = n;
+                    app();
                     count = 1;
+                    last = s;
                 }
             }
-            append();
-            if (times == 0)
-                std::cout << output << std::endl;
+            app();
         }
+        std::cout << output << std::endl;
     }
+    
     return 0;
 }

@@ -1,65 +1,53 @@
 // Problem: http://140.114.86.238/problem/11055/
-#include <stdio.h>
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
 int main(void)
-{   
-    int ele;
-    int i;
-    int temp;
-    int place;
+{
+    std::ios::sync_with_stdio(false);
+    std::vector<int> set1, set2, output;
     
-    std::vector<int> output;
-    std::vector<int>::iterator t;
+    int eles1, eles2, i, temp;
     
-    while (scanf("%d", &ele), ele != 0)
+    while (std::cin >> eles1, eles1)
     {
-        i = ele;
-        place = 0;
-        
-        std::vector<int> set1(i);
-        
-        while (i--)
+        output.clear();
+        set1.clear();
+        set2.clear();
+        i = eles1;
+        while(i--)
         {
-            scanf("%d", &temp);
-            set1.at(place++) = temp;
+            std::cin >> temp;
+            set1.push_back(temp);
         }
         
-        scanf("%d", &i);
-        place = 0;
-        std::vector<int> set2(i);
-        
-        while (i--)
+        std::cin >> eles2;
+        i = eles2;
+        while(i--)
         {
-            scanf("%d", &temp);
-            set2.at(place++) = temp;
+            std::cin >> temp;
+            set2.push_back(temp);
         }
         
         std::sort(set1.begin(), set1.end());
         std::sort(set2.begin(), set2.end());
         
-        output.clear();
-        t = output.begin();
-        
-        std::set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(output, t));
+        std::set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(output, output.begin()));
         
         if (output.empty())
-            printf("empty");
+            std::cout << "empty" << std::endl;
         else {
-            t = output.begin();
-            for (auto o:output)
+            auto t = output.begin();
+            for (auto o: output)
             {
                 t++;
-                printf("%d", o);
+                std::cout << o;
                 if (t != output.end())
                     std::cout << " ";
             }
-        }
-        
-        std::cout << "\n";
+            std::cout << std::endl;
+        }   
     }
+    return 0;
 }
-
-

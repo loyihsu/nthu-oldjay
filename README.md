@@ -6,7 +6,7 @@ The codes will be edited and tested in the system to ensure that they work. If s
 
 ## To-do list
 
-- [ ] Import all the codes from OJ (P4 --)
+- [ ] Import all the codes from OJ (P3 --)
 - [ ] Code implementation improvements
     - I2P (I)
         - [x] 1000
