@@ -1,6 +1,4 @@
 // Problem: http://140.114.86.238/problem/10579/
-#include <stdio.h>
-#include <string.h>
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -8,65 +6,59 @@
 int main(void)
 {
     std::ios::sync_with_stdio(false);
-    
-    int t;
-    
-    int n, i;
-    
-    std::vector<int> b1, b2;
-    
+    int testcases;
     char temp;
-    int t1, t2;
+    int ps, i;
+    std::vector<int> set1, set2;
     
-    while (std::cin >> t)
+    std::cin >> testcases;
+    
+    while (testcases--)
     {
-        while (t--)
-        {
-            b1.clear();
-            b2.clear();
-            std::cin >> n;
-            i = n;
-            while (i--)
-            {
-                std::cin >> temp;
-                t1 = temp - '0';
-                b1.push_back(t1);
-            }
+        set1.clear();
+        set2.clear();
         
-            i = n;
-            while (i--)
-            {
-                std::cin >> temp;
-                t1 = temp - '0';
-                b2.push_back(t1);
-            }
-            
-            std::transform(b1.begin(), b1.end(), b2.begin(), b1.begin(), std::plus<int>());
-            
-            std::reverse(b1.begin(), b1.end());
-            
-            t1 = 0;
-            
-            
-            for (auto &a: b1)
-            {
-                if (t1 != 0)
-                    a += t1;
-                t1 = a / 2;
-                t2 = a % 2;
-                
-                a = t2;
-            }
-            
-            std::reverse(b1.begin(), b1.end());
-            
-            for (auto a: b1)
-            {
-                std::cout << a;
-            }
-            
-            std::cout << "\n";
+        std::cin >> ps;
+        i = ps;
+        while (i--)
+        {
+            std::cin >> temp;
+            set1.push_back(temp - '0');
         }
+        
+        i = ps;
+        
+        while (i--)
+        {
+            std::cin >> temp;
+            set2.push_back(temp - '0');
+        }
+        
+        std::reverse(set1.begin(), set1.end());
+        std::reverse(set2.begin(), set2.end());
+        
+        std::vector<int> output;
+        output.reserve(ps);
+        
+        std::transform(set1.begin(), set1.end(), set2.begin(), std::inserter(output,output.begin()), std::plus<int>());
+        
+        int up = 0;
+        
+        for (auto &o: output)
+        {
+            o += up;
+            up = o / 2;
+            o %= 2;
+        }
+        
+        std::reverse(output.begin(), output.end());
+        
+        for (auto o: output)
+        {
+            std::cout << o;
+        }
+        
+        std::cout << "\n";
     }
     return 0;
 }

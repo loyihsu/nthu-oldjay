@@ -6,9 +6,12 @@ The codes will be edited and tested in the system to ensure that they work. If s
 
 ## To-do list
 
-- [ ] Import all the codes from OJ (P3 --)
+- [x] Import all codes from OJ (I2P 1)
+- [x] Import all codes from OJ (I2P 2)
+- [x] Import all codes from OJ (DS-other & Other)
+- [ ] Import all codes from OJ (Other)
 - [ ] Code implementation improvements
-    - I2P (I)
+    - [ ] I2P (I)
         - [x] 1000
         - [x] 10066
         - [ ] 10067
@@ -55,11 +58,12 @@ The codes will be edited and tested in the system to ensure that they work. If s
         - [ ] 10899
         - [ ] 10900
         - [ ] 10901
-    - I2P (II)
+    - [ ] I2P (II)
         - [ ] 9240
         - [ ] 10477
         - [ ] 10478
         - [ ] 10557
+        - [ ] 10576
         - [ ] 10579
         - [ ] 10580
         - [ ] 10673
@@ -93,4 +97,16 @@ The codes will be edited and tested in the system to ensure that they work. If s
         - [ ] 11028
         - [ ] 11053
         - [ ] 11055
-    - DS
+    - [ ] Data Structure
+    - [ ] Others
+        - [ ] 10730
+        - [ ] 11099
+        - [ ] 12026
+        - [ ] 12027
+        - [ ] 12038
+        - [ ] 12125
+        - [ ] 12127
+        - [ ] 12133
+        - [ ] 12135
+        - [ ] 12138
+        - [ ] 12139
