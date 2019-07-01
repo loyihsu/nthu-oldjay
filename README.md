@@ -14,9 +14,9 @@ The codes will be edited and tested in the system to ensure that they work. If s
   - [ ] I2P (I)
     - [x] 1000
     - [x] 10066
-    - [ ] 10067
-    - [ ] 10097
-    - [ ] 10099
+    - [x] 10067
+    - [x] 10097
+    - [x] 10099
     - [ ] 10162
     - [ ] 10237
     - [ ] 10389

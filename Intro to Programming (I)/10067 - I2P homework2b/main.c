@@ -3,35 +3,10 @@
 
 int main(void)
 {
-	int name, a, b, c;
-	scanf("%d", &name);
-	a = (name / 100);
-	b = (name / 10) - (a * 10);
-	c = name - (100 * a) - (10 * b);
-	if (a >= 1 && a <= 9)
-	{
-		printf("%c", a + 64);
-	}
-	
-	if (a == 0)
-	{
-		printf("%c", a + 74);
-	}
+	int n[3];
 
-	if (b >= 1 && b <= 9)
-	{
-		printf("%c", b + 64);
-	} else if (b == 0)
-	{
-		printf("%c", b + 74);
-	}
-	
-	if (c >= 1 && c <= 9)
-	{
-		printf("%c", c + 64);
-	} else if (c == 0)
-	{
-		printf("%c", c + 74);
-	}
+	scanf("%1d%1d%1d", &n[0], &n[1], &n[2]);
+	printf("%c%c%c", n[0] + 'A' - 1, n[1] + 'A' - 1, n[2] + 'A' - 1);	
+
 	return 0;
 }

@@ -1,39 +1,28 @@
 // Problem: http://140.114.86.238/problem/10097/
 #include <stdio.h>
 
-int power(int, int);
+int pow(int base, int power) {
+    int output = 1, i;
+    for (i = 0; i < power; i++) {
+        output *= base;
+    }
+    return output;
+}
 
 int main(void)
 {
-    int i, outnum;
-    int j;
-    int output[8] = {0}, routput[9] = {0};
-    scanf("%d %d", &routput[8], &outnum);
+    int x, y, i;
     
-    i = 7;
-    while (i>=0)
-    {
-        output[i] = routput[i+1]/(power(3, i));
-        routput[i] = routput[i+1]%(power(3, i));
-        i--;
+    scanf("%d%d", &x, &y);
+    
+    char output[y];
+    
+    for (i = 0; i < y; i++) {
+        int place = x/pow(3, y-i-1);
+        output[i] = place + '0';
+        x -= place * pow(3, y-i-1);
     }
-    
-    j = outnum - 1;
-    while (j>=0) printf("%d", output[j--]);
-    
-    printf("\n");
+    printf("%s\n", output);
     
     return 0;
-}
-
-int power(int number, int times)
-{
-    int i = 0, n = 1;
-    while (i<times)
-    {
-        n = number * n;
-        i++;
-    }
-    
-    return n;
 }
