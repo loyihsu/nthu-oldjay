@@ -1,8 +1,7 @@
 // Problem: http://140.114.86.238/problem/10099/
 #include <stdio.h>
 
-int main(void)
-{
+int main(void) {
     int n, i, j;
     
     scanf("%d", &n);

@@ -9,8 +9,7 @@ int pow(int base, int power) {
     return output;
 }
 
-int main(void)
-{
+int main(void) {
     int x, y, i;
     
     scanf("%d%d", &x, &y);

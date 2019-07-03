@@ -1,8 +1,7 @@
 // Problem: http://140.114.86.238/problem/10066/
 #include <stdio.h>
 
-int main(void)
-{
+int main(void) {
     char digits[3];
     float num=0, rev=0;
     
