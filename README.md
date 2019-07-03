@@ -9,7 +9,7 @@ The codes will be edited and tested in the system to ensure that they work. If s
 - [x] Import all codes from OJ (I2P 1)
 - [x] Import all codes from OJ (I2P 2)
 - [x] Import all codes from OJ (DS-other & Other)
-- [ ] Import all codes from OJ (Data Structure)
+- [x] Import all codes from OJ (Data Structure)
 - [ ] Code implementation improvements
   - [ ] I2P (I)
     - [x] 1000
