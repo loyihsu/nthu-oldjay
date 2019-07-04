@@ -10,18 +10,17 @@ int main(void) {
     for (k = 0; k < times; k++) {
         for (i = 0; i < size; i++) {
             for (j = 0; j <= i; j++)
-                printf("%c", c);
-            if (!(size == 1 && k == times - 1))
-                printf("\n");
+                printf("%c", c);                    // Print the upper
+            if (!(size == 1 && k == times - 1))     // Dealer with length 1
+                printf("\n");                       // Newline for non-length 1's
         }
         for (i = size-1; i > 1; i--) {
             for (j = i-1; j >= 0; j--)
-                printf("%c", c);
+                printf("%c", c);                    // Print the lower
             printf("\n");
         }
     }
-    if (size != 1)
-        printf("%c", c);
+    if (size != 1) printf("%c", c);                 // Dealer for the last line
     
     return 0;
 }
