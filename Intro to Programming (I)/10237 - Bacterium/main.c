@@ -2,11 +2,8 @@
 #include <stdio.h>
 
 void divide(int cur, int total, int first, int second, int third) {
-    if (cur == total) {
-        printf("%d\n", first+second+third);
-    } else {
-        divide(cur+1, total, first+second, first, second);
-    }
+    if (cur == total) printf("%d\n", first+second+third);
+    else divide(cur+1, total, first+second, first, second);
     return;
 }
 

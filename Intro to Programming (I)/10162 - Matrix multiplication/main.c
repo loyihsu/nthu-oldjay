@@ -23,7 +23,7 @@ int main(void) {
     for (i = 0; i < height_a; i++) {
         for (j = 0; j < width_b; j++) {
             for (k = 0; k < width_a; k++)
-                sum = sum + a[i][k] * b[k][j];
+                sum += a[i][k] * b[k][j];
             output[i][j] = sum;
             sum = 0;
         }

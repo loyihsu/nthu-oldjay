@@ -14,7 +14,7 @@ int numPrime(int start, int end) {
                 break;
             }
         }
-        if (!divs) count++;                   // Nothing found!
+        if (!divs) count++;            // Nothing found!
         divs = 0;
     }
 
