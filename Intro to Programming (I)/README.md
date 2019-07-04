@@ -1,6 +1,6 @@
 # Intro to Programming (I)
 
-## Code Improvements Status (39.1%)
+## Code Improvements Status (41.3%)
 
 1. [x] 1000
 2. [x] 10066
@@ -20,7 +20,7 @@
 16. [x] 10772
 17. [x] 10773
 18. [x] 10774
-19. [ ] 10806
+19. [x] 10806
 20. [ ] 10808
 21. [ ] 10811
 22. [ ] 10824
