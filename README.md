@@ -26,7 +26,7 @@ The codes will be edited and tested in the system to ensure that they work. If s
     - [x] 10759
     - [x] 10768
     - [x] 10769
-    - [ ] 10770
+    - [x] 10770
     - [ ] 10772
     - [ ] 10773
     - [ ] 10774
