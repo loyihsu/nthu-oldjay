@@ -1,34 +1,21 @@
 // Problem: http://140.114.86.238/problem/10773/
 #include <stdio.h>
+#include <string.h>
 
-int main(void)
-{
-    int N = 0, M = 0;
-    int k = 0; //years
-    int i = 0;
-    char pond;
-    int num;
+int main(void) {
+    int noOfPondA = 0, noOfPondB = 0, years = 0, num;
+    char pond[2];
     
-    scanf("%d %d", &N, &M);
-    scanf("%d", &k);
-    
-    for (i = 0; i<k; i++)
-    {
-        scanf("%c %d", &pond, &num);
-        while (pond=='\n') scanf("%c %d", &pond, &num);
-        N = (1.08)*N;
-        M = (1.08)*M;
-        if (pond == 'A')
-        {
-            N = N-num;
-            M = M+num;
-        } else if (pond == 'B')
-        {
-            M = M-num;
-            N = N+num;
-        }
+    scanf("%d%d", &noOfPondA, &noOfPondB);
+    scanf("%d", &years);
+    while (years--) {
+        scanf("%s%d", pond, &num);
+        // If pond == "A", move num of fish to pond "B"
+        noOfPondA = (!strcmp(pond,"A")) ? noOfPondA*(1.08)-num : noOfPondA*(1.08)+num;
+        // If pond == "B", move num of fish to pond "A"
+        noOfPondB = (!strcmp(pond,"B")) ? noOfPondB*(1.08)-num : noOfPondB*(1.08)+num;
     }
+    printf("%d %d\n", noOfPondA, noOfPondB);
     
-    printf("%d %d\n", N, M);
     return 0;
 }
