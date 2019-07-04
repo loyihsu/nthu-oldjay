@@ -1,5 +1,4 @@
 #ifndef FUNCTION_H
-
 #define FUNCTION_H
 
 int gcd(int a,int b);
