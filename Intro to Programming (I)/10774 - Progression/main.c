@@ -1,39 +1,20 @@
 // Problem: http://140.114.86.238/problem/10774/
 #include <stdio.h>
 
-int main(void)
-{
+int main(void) {
+    int array[4], num = 4, mode = -1, common = 0;
     
+    while (num--)
+        scanf("%d", &array[3-num]);
     
-    int inputnum[4];
-    int i;
-    int next, common;
-    int commonma, commonmb;
-    int commonra, commonrb;
-    
-    for (i = 0; i < 4; i++)
-    {
-        scanf("%d", &inputnum[i]);
+    mode = ((array[1]-array[0]) == (array[3] - array[2])) ? 0 : 1;
+    if (mode == 0) {                                // arithmetic
+        common = array[3] - array[2];
+        printf("%d %d", array[3]+common, common);
+    } else {                                        // geometric
+        common = array[3] / array[2];
+        printf("%d %d", array[3]*common, common);
     }
-    
-    commonma = inputnum[1]-inputnum[0];
-    commonmb = inputnum[2]-inputnum[1];
-    
-    commonra = inputnum[1]/inputnum[0];
-    commonrb = inputnum[2]/inputnum[1];
-    
-    
-    if (commonma == commonmb)
-    {
-        common = inputnum[1]-inputnum[0];
-        next = inputnum[3] + common;
-    } else if (commonrb == commonra) {
-        common = inputnum[1]/inputnum[0];
-        next = inputnum[3] * common;
-    }
-    
-    printf("%d %d", next, common);
-    
     
     return 0;
 }
