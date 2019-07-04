@@ -1,74 +1,39 @@
+// Problem: http://140.114.86.238/problem/10772
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
-{
+int main(void) {
+    char str[4] = "", cur[9] = "";
+    int n, i, j, max = 0, count = 0, flag = 0;
     
-    char stringa[4] = {0};
-    char stuff[10][9] = {0};
-    int n, i, j, k, big = 0, max[10] = {0};
-    unsigned long length;
-    i = 0;
-    
-    scanf("%s", stringa);
+    scanf("%s", str);
     scanf("%d", &n);
     
-    for (i = 0; i < n; i++)
-    {
-        scanf("%s", stuff[i]);
-    }
-    length = strlen(stringa);
+    unsigned long findLen = strlen(str), findeeLen = 0;
     
-    
-    i = 0;
-    {
-        for (j = 0; j<9; j++)
-        {
-            if (length == 2){
-                for (k = 0; k < 8; k++)
-                {
-                    if (stringa[i] == stuff[j][k] && stringa[i+1] == stuff[j][k+1])
+    while (n--) {
+        count = 0;
+        scanf("%s", cur);
+        findeeLen = strlen(cur);
+        for (i = 0; i < findeeLen; i++) {
+            if (cur[i] == str[0]) {
+                flag = 1; // Raise the flag when check that the current character equals to `str`
+                for (j = 0; j < findLen; j++) {
+                    // Check the rest of the string
+                    if (cur[i+j] != str[j])
                     {
-                        max[j]++;
+                        flag = 0; // Put down the flag if found different char within the length of `str`
+                        break;    // Break the loop as it won't be the same
                     }
                 }
-            } else if (length == 3)
-            {
-                for (k = 0; k < 8; k++)
-                {
-                    if (stringa[i] == stuff[j][k] && stringa[i+1] == stuff[j][k+1] && stringa[i+2] == stuff[j][k+2])
-                    {
-                        max[j]++;
-                    }
-                }
-            } else if (length == 4)
-            {
-                for (k = 0; k < 7; k++)
-                {
-                    if (stringa[i] == stuff[j][k] && stringa[i+1] == stuff[j][k+1] && stringa[i+2] == stuff[j][k+2] && stringa[i+3] == stuff[j][k+3])
-                    {
-                        max[j]++;
-                    }
-                }
-            } else if (length == 1)
-            {
-                for (k = 0; k < 9; k++)
-                {
-                    if (stringa[i] == stuff[j][k])
-                    {
-                        max[j]++;
-                    }
-                }
+                if (flag == 1)
+                    count += 1; // Count it if the flag was not put down all the way
             }
         }
+        if (count >= max)
+            max = count;    // Save the maximum if the current `count` is bigger than the max
     }
-    
-    for (i = 0; i<9; i++)
-    {
-        big = (max[i]>=big)?max[i]:big;
-    }
-    
-    printf("%d", big);
+    printf("%d", max);
     
     return 0;
 }
