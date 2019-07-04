@@ -1,6 +1,7 @@
 # Data Structure
 
 ## Code Improvements Status:
+- [ ] 11834
 - [ ] 11844
 - [ ] 11859
 - [ ] 11865
