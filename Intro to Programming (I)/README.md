@@ -1,6 +1,7 @@
 # Intro to Programming (I)
 
 ## Code Improvements Status (34.7%)
+
 1. [x] 1000
 2. [x] 10066
 3. [x] 10067
@@ -48,11 +49,12 @@
 45. [ ] 10900
 46. [ ] 10901
 
-# List of Labs and Tests
+## List of Labs and Tests
 
 Most of the assignments of the course was recorded on the OJ and some imcomplete or complete backups can be found on my disk. However, the problems solved during labs and tests are stored in the test-specific account and are note accessible anymore from here. Thus, the questions that are on the to-do list to be solved when I have time.
 
-## List of labs
+### List of labs
+
 * [Lab 0](http://140.114.86.238/contest/588/)
   * [x] [1000 - The A+B Problem](http://140.114.86.238/problem/1000)
 * [Lab 1](http://140.114.86.238/contest/815/)
@@ -80,7 +82,8 @@ Most of the assignments of the course was recorded on the OJ and some imcomplete
 * [Lab 13](http://140.114.86.238/contest/)
   * [ ] [10903 - Postman](http://140.114.86.238/problem/10903)
 
-## List of Midterms and Final
+### List of Midterms and Final
+
 * [Mid 1](http://140.114.86.238/contest/844/)
   * [ ] [10777 - Exam Seat Arrangement](http://140.114.86.238/problem/10777)
   * [ ] [10781 - Two dimensional array rotation](http://140.114.86.238/problem/10781)

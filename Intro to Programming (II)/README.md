@@ -1,6 +1,7 @@
 # Intro to Programming (II)
 
 ## Code Improvements Status (0%)
+
 1. [ ] 9240
 2. [ ] 10477
 3. [ ] 10478
@@ -40,11 +41,11 @@
 37. [ ] 11053
 38. [ ] 11055
 
-# List of Labs and Tests
+## List of Labs and Tests
 
 Most of the assignments of the course was recorded on the OJ and some imcomplete or complete backups can be found on my disk. However, the problems solved during labs and tests are stored in the test-specific account and are note accessible anymore from here. Thus, the questions that are on the to-do list to be solved when I have time.
 
-## List of labs
+### List of labs
 
 * [Lab 0](http://140.114.86.238/contest/917/)
   * [ ] [10943 - Search Dictionary](http://140.114.86.238/problem/10943/)
@@ -66,7 +67,8 @@ Most of the assignments of the course was recorded on the OJ and some imcomplete
 * [Lab 8](http://140.114.86.238/contest/970/)
   * [ ] [11029 - extend](http://140.114.86.238/problem/11029/)
 
-## List of Midterms and Final
+### List of Midterms and Final
+
 * [Mid 1](http://140.114.86.238/contest/939/)
   * [ ] [10981 - Delete linked list ](http://140.114.86.238/problem/10981/)
   * [ ] [10982 - Infix to truth table](http://140.114.86.238/problem/10982/)
