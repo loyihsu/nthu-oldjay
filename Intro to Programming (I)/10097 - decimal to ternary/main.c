@@ -17,9 +17,9 @@ int main(void) {
     char output[y];
     
     for (i = 0; i < y; i++) {
-        int place = x/pow(3, y-i-1);
-        output[i] = place + '0';
-        x -= place * pow(3, y-i-1);
+        int place = x/pow(3, y-i-1); // Convert to ternary
+        output[i] = place + '0';     // To char
+        x -= place * pow(3, y-i-1);  // Keep the number (x) at the amount after conversion
     }
     printf("%s\n", output);
     

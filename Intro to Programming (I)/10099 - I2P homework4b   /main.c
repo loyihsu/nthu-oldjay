@@ -14,6 +14,7 @@ int main(void) {
     for (i = 0; i < n ; i++) {
         for (j = 0; j < n; j++) {
             int pos = (i-j < 0) ? i-j+n : i-j;
+            // If (i-j) went out of scope, get it back (+n) to form a rounded illusion
             printf("%2d", elements[pos]);
         }
         printf("\n");

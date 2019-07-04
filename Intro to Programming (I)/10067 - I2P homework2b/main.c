@@ -5,7 +5,8 @@ int main(void) {
 	int n[3];
 
 	scanf("%1d%1d%1d", &n[0], &n[1], &n[2]);
-	printf("%c%c%c", n[0] + 'A' - 1, n[1] + 'A' - 1, n[2] + 'A' - 1);	
+	printf("%c%c%c", n[0] + 'A' - 1, n[1] + 'A' - 1, n[2] + 'A' - 1);
+	// Printing from 'A'-1 (1 == 'A')
 
 	return 0;
 }
