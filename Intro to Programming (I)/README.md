@@ -1,3 +1,53 @@
+# Intro to Programming (I)
+
+## Code Improvements Status:
+- [x] 1000
+- [x] 10066
+- [x] 10067
+- [x] 10097
+- [x] 10099
+- [x] 10162
+- [x] 10237
+- [x] 10389
+- [x] 10716
+- [x] 10739
+- [x] 10758
+- [x] 10759
+- [x] 10768
+- [x] 10769
+- [x] 10770
+- [ ] 10772
+- [ ] 10773
+- [ ] 10774
+- [ ] 10806
+- [ ] 10808
+- [ ] 10811
+- [ ] 10824
+- [ ] 10825
+- [ ] 10832
+- [ ] 10833
+- [ ] 10839
+- [ ] 10840
+- [ ] 10845
+- [ ] 10846
+- [ ] 10848
+- [ ] 10849
+- [ ] 10850
+- [ ] 10852
+- [ ] 10875
+- [ ] 10881
+- [ ] 10882
+- [ ] 10885
+- [ ] 10887
+- [ ] 10889
+- [ ] 10893
+- [ ] 10896
+- [ ] 10897
+- [ ] 10898
+- [ ] 10899
+- [ ] 10900
+- [ ] 10901
+
 # List of Labs and Tests
 
 Most of the assignments of the course was recorded on the OJ and some imcomplete or complete backups can be found on my disk. However, the problems solved during labs and tests are stored in the test-specific account and are note accessible anymore from here. Thus, the questions that are on the to-do list to be solved when I have time.
