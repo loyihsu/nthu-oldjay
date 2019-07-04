@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "function.h"
 
-int main(){
+int main(void){
     int n;
     scanf("%d", &n);
     hanoi(n, 'A', 'B', 'C');
