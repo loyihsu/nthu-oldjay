@@ -15,12 +15,12 @@ int main(void) {
     
     scanf("%d", &num);
     for (i = 0; i < 12; i++) {
-        binaryNum[i] = num / power(2, 11-i);
-        num -= binaryNum[i] * power(2, 11-i);
+        binaryNum[i] = num / power(2, 11-i);    // Turn the number to binary
+        num -= binaryNum[i] * power(2, 11-i);   // Turn the remaining number to the correct amount
     }
-    binaryNum[11] += 1;
+    binaryNum[11] += 1;                 // Perform +1
     for (i = 11; i >= 0; i--) {
-        if (binaryNum[i] > 1) {
+        if (binaryNum[i] > 1) {         // Perform carries
             binaryNum[i]   -= 2;
             binaryNum[i-1] += 1;
             carries += 1;
@@ -30,7 +30,7 @@ int main(void) {
         if (!pos) {
             if (i+1 < 12)
                 if (binaryNum[i+1])
-                    pos = 1;
+                    pos = 1;            // Find the first position to print
         } else {
             printf("%d", binaryNum[i]);
         }
