@@ -12,11 +12,9 @@ void pascalNum(int n) {
             array[i][1] = 1;
             array[i][i] = 1;
         }
-        
         for (i = 2; i < 100; i++)
             for (j = 2; j < i; j++)
                 array[i][j] = array[i-1][j-1]+array[i-1][j];    // Deal with the inside numbers
-        
         
         for (i = 1; i <= n+1; i++)
             printf("%6d", array[n+1][i]);
