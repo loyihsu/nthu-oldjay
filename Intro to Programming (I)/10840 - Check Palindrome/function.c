@@ -5,19 +5,11 @@
 
 int isPalindrome(char *start, char *end)
 {
-    int i;
-    int pro = 1;
-    for (i = 0; i <= (strlen(start))/2; i++)
-    {
-        if (start[i] == end[-i])
-        {
-            if (pro != 0)
-            {
-                pro = 1;
-            }
-        } else {
-            pro = 0;
-        }
-    }
-    return pro;
+    int i, flag = 1;
+    unsigned long half = (strlen(start))/2;
+    
+    for (i = 0; i <= half; i++)
+        flag = (start[i] == end[-i] && flag == 1) ? 1 : 0;
+    
+    return flag;
 }
