@@ -4,18 +4,14 @@
 #define SIZE 100
 
 int main() {
-	int *ptrArr[SIZE];
-	int dataArr[SIZE] = {0};
+	int *ptrArr[SIZE], dataArr[SIZE] = {0};
 	char inst;
-	int dataNum, instNum;
-	int param1, param2;
-	int i;
+	int dataNum, instNum, i, param1, param2;
 
-	/* input */
 	scanf("%d %d", &dataNum, &instNum);
-
-	/* initialize the ptrArr */
-	for (i = 0; i < dataNum; i++)
+	
+	// Initialize the ptrArr
+	for (i = 0; i < dataNum; i++)		
 		ptrArr[i] = &dataArr[i];
 
 	for (i = 0; i < instNum; i++) {
@@ -24,10 +20,8 @@ int main() {
 		execInst(ptrArr, inst, param1, param2);
 	}
 
-	/* output */
-	for (i = 0; i < dataNum - 1; i++) {
+	for (i = 0; i < dataNum - 1; i++)
 		printf("%d ", *ptrArr[i]);
-	}
 	printf("%d", *ptrArr[i]);
 
 	return 0;
