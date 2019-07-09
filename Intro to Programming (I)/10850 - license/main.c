@@ -2,39 +2,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
-{
+void swap(char *a, char *b) {
+    char temp = *b;
+    *b = *a;
+    *a = temp;
+}
+
+int main(void) {
     char str[5];
-    int HIT[10000] = {0};
-    int temp;
-    int i, j, k, l;
+    int lines, i, j, HIT[10000] = { 0 };
     
-    scanf("%d", &i);
-    for (j = 0; j < i; j++)
-    {
+    scanf("%d", &lines);
+    while (lines--) {
         scanf("%s", str);
-        for (k = 4; k > 0; k--)
-        {
-            for (l = 1; l < k; l++)
-            {
-                if(str[l-1]>str[l])
-                {
-                    temp = str[l];
-                    str[l] = str[l-1];
-                    str[l-1] = temp;
-                }
-            }
-        }
+        for (i = 4; i > 0; i--)
+            for (j = 1; j < i; j++)
+                if (str[j-1] > str[j])
+                    swap(&str[j-1], &str[j]);
         HIT[atoi(str)]++;
     }
-    
+
     for (i = 0; i<10000; i++)
-    {
-        if (HIT[i]>=2)
-        {
+        if (HIT[i] >= 2)
             printf("%d\n", i);
-        }
-    }
     
     return 0;
 }
