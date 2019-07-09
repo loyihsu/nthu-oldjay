@@ -2,7 +2,6 @@
 #include "function.h"
 
 int main(void) {
-
 	int a[50][50], b[50][50], c[50][50], d[50][50];
 	int index_to_add[20];
 	int *entry[3];
@@ -36,4 +35,3 @@ int main(void) {
 
 	return 0;
 }
-
