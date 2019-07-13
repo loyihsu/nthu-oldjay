@@ -2,22 +2,19 @@
 #include <stdlib.h>
 #include "function.h"
 
-int main(){
+int main() {
     int n, i;
     Grade gradeList[1000];
+    
     scanf("%d", &n);
-
-    for(i = 0; i < n; i++)
-    {
-        scanf(
-            "%d %d %d %d %d",
+    for(i = 0; i < n; i++) {
+        scanf("%d %d %d %d %d",
             &gradeList[i].ID,
             &gradeList[i].Chinese,
             &gradeList[i].English,
             &gradeList[i].math,
             &gradeList[i].science
         );
-
         gradeList[i].total =
             gradeList[i].Chinese
             + gradeList[i].English
@@ -28,8 +25,7 @@ int main(){
     qsort(gradeList, n, sizeof(Grade), compare);
 
     for(i = 0; i < n; i++) {
-        printf(
-            "%d\t%d\t%d\t%d\t%d\t%d\n",
+        printf("%d\t%d\t%d\t%d\t%d\t%d\n",
             gradeList[i].ID,
             gradeList[i].total,
             gradeList[i].Chinese,
@@ -38,5 +34,6 @@ int main(){
             gradeList[i].science
         );
     }
+    
     return 0;
 }
