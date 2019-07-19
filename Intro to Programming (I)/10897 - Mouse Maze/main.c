@@ -2,37 +2,27 @@
 #include <stdio.h>
 
 char map[501][501];
-void path(int R, int C, int pr, int pc, int steps);
 int count;
 
-int main(void)
-{
-    //declare
-    int number, x, y, sx = 0, sy = 0;
-    int i, j, k;
+void path(int R, int C, int pr, int pc, int steps);
+
+int main(void) {
+    int number, x, y, sx = 0, sy = 0, i, j, k;
     
     scanf("%d", &number);
     
-    for (i = 0; i<number; i++)
-    {
+    for (i = 0; i < number; i++) {
         count = 250000;
         
         scanf("%d %d\n", &x, &y);
         
         for (j = 0; j < x; j++)
-        {
             for (k = 0; k <= y; k++)
-            {
                 scanf("%c", &map[j][k]);
-            }
-        }
         
-        for (j = 0; j < x; j++)
-        {
-            for (k = 0; k <= y; k++)
-            {
-                if (map[j][k] == 'S')
-                {
+        for (j = 0; j < x; j++) {
+            for (k = 0; k <= y; k++) {
+                if (map[j][k] == 'S') {
                     sx = j;
                     sy = k;
                 }
@@ -43,16 +33,15 @@ int main(void)
         
         if (count != 250000) printf("%d\n", count);
         else printf("-1\n");
-        
     }
+    
     return 0;
 }
 
-void path (int R, int C, int pr, int pc, int step)
-{
-    if (map[pr][pc] == 'F')
-    {
-        if (step < count) count = step; //find the minimum
+void path(int R, int C, int pr, int pc, int step) {
+    if (map[pr][pc] == 'F') {
+        //find the minimum
+        if (step < count) count = step;
         return;
     }
     
@@ -65,4 +54,3 @@ void path (int R, int C, int pr, int pc, int step)
     
     map[pr][pc] = '$';  //to avoid influence on others
 }
-
