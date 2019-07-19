@@ -2,6 +2,7 @@
 #define FUNCTION_H_INCLUDED
 
 #define SIZE 50
+
 typedef struct{
     char Name[15];
     char Height[15];
