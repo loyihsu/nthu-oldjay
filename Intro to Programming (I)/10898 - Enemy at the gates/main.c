@@ -6,11 +6,9 @@ int main(void) {
     
     scanf("%d", &mapsize);
     
-    for (i = 0; i<mapsize; i++) {
-        for (j = 0; j<mapsize; j++) {
+    for (i = 0; i < mapsize; i++)
+        for (j = 0; j < mapsize; j++)
             scanf("%d", &array[i][j]);
-        }
-    }
     
     scanf("%d", &bomb);
     
@@ -19,16 +17,16 @@ int main(void) {
         array[p_x-1][p_y-1] = 0;
     }
     
-    for (i = 0; i<mapsize; i++) {
+    for (i = 0; i < mapsize; i++) {
         flag = 0;
-        for (j = 0; j<mapsize; j++){
+        for (j = 0; j < mapsize; j++){
             if (i != j)
                 if (array[i][j]) {
                     flag = 1;
                     break;
                 }
         }
-        for (j = 0; j<mapsize; j++){
+        for (j = 0; j < mapsize; j++){
             if (i != j)
                 if (array[j][i]) {
                     flag = 1;
