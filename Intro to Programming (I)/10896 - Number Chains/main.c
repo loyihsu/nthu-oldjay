@@ -6,7 +6,6 @@
 char number[11];
 int result[1005];
 
-
 int asc(const void *a, const void *b) {
     const char *ia = (const char *) a;
     const char *ib = (const char *) b;
@@ -20,22 +19,20 @@ int desc(const void *a, const void *b) {
 }
 
 int sorting (char order[]) {
-    
     if (!strcmp(order, "asc"))
         qsort(number,strlen(number),sizeof(char),asc);
-    
     else
         qsort(number,strlen(number),sizeof(char),desc);
     
-    int integer = atoi (number);
+    int integer = atoi(number);
     
     return integer;
 }
 
-int sameResult (int newNum, int NumOfChains) {
+int sameResult(int newNum, int NumOfChains) {
     int i, same = 0;
-    for (i = 0; i< NumOfChains; i++){
-        if (newNum == result[i]){
+    for (i = 0; i< NumOfChains; i++) {
+        if (newNum == result[i]) {
             same = 1;
             break;
         }
