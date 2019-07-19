@@ -2,9 +2,7 @@
 #include "function.h"
 
 int main(void) {
-
-	int **mat;
-	int m, n, i;
+	int **mat, m, n, i;
 
 	scanf("%d %d", &m, &n);
 
