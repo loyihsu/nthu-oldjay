@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "function.h"
-int main(void)
-{
+int main(void) {
     int i,j,k;
     int num_cars;
 

@@ -12,7 +12,7 @@ int min(int a, int b) {
 
 int checkvalid(int row, int col, int checkmin, int checkmax) {
     int i;
-    if (row != -1){
+    if (row != -1) {
         //row fixed
         for (i = checkmin; i<=checkmax; i++){
             if (map[row][i] != SPACE)
