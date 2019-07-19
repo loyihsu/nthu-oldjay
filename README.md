@@ -6,7 +6,7 @@ Steps of this project:
 
 1. [x] Importing all the codes from 2015~2018 that I have ever submitted to OJ.
 2. [ ] Improving the implementation by editing and retesting it on the OJ to make sure the codes work.
-    1. [ ] I2P (I)
+    1. [x] I2P (I)
     2. [ ] I2P (II)
     3. [ ] Data Structure
     4. [x] Others
