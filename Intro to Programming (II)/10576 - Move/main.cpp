@@ -1,31 +1,26 @@
 // Problem: http://140.114.86.238/problem/10576/
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
 
-struct Node
-{
+struct Node {
     Node *prev;
     Node *next;
     long long id;
 };
 
-int main(void)
-{
+int main(void) {
     std::ios::sync_with_stdio(false);
+
     std::string command;
     Node *root = nullptr, *head;
-    
-    long long a, b;
-    long long N, i;
+    long long a, b, N, i;
     
     std::cin >> N;
     
-    head = (Node*)malloc(sizeof(Node) * (N+1));
+    head = (Node*)malloc(sizeof(Node)*(N+1));
     
-    for (i = 1; i <= N; i++)
-    {
-        if (root == nullptr)
-        {
+    for (i = 1; i <= N; i++) {
+        if (root == nullptr) {
             root = &head[i];
             head[i].id = i;
             head[i].next = nullptr;
@@ -38,9 +33,9 @@ int main(void)
         }
     }
     
-    while (std::cin >> command, command != "Exit")
-    {
+    while (std::cin >> command, command != "Exit") {
         std::cin >> a >> b;
+
         if(head[a].next==&head[b]) continue;
         
         Node *newHead = head[a].next;
@@ -57,16 +52,13 @@ int main(void)
     
     Node *temp = root;
     
-    while (temp)
-    {
+    while (temp) {
         std::cout << temp->id;
         if (temp->next)
-        {
             std::cout << " ";
-        }
         temp = temp->next;
     }
-    
     std::cout << "\n";
 
+    return 0;
 }
