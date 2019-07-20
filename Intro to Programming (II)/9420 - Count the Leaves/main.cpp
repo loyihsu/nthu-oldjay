@@ -3,28 +3,23 @@
 #include <iostream>
 #include <map>
 
-int main(void)
-{
-    int n;
-    int a, b;
+int main(void) {
+    int n, a, b;
     std::map<int, int> edge;
     
-    while (std::cin >> n, n != 0)
-    {
+    while (std::cin >> n, n != 0) {
         edge.clear();
-        while (n--)
-        {
+        while (n--) {
             std::cin >> a >> b;
             edge[a]++;
             edge[b]++;
         }
         
-        std::cin >> a;
-        
-        std::cout << std::count_if(edge.begin(), edge.end(), [&a](const std::pair<int, int> &v)
-        {
+        std::cin >> a;        
+        std::cout << std::count_if(edge.begin(), edge.end(), [&a](const std::pair<int, int> &v) {
             return v.second <= 1 && v.first != a;
         }) << "\n";
     }
+
     return 0;
 }
