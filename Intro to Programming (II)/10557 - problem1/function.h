@@ -1,8 +1,7 @@
 #ifndef RATIONAL_H
 #define RATIONAL_H
 
-class Rational
-{
+class Rational {
 public:
     Rational( int = 0, int = 1 ); // default constructor
     Rational addition( const Rational & ) const; // function addition
@@ -15,4 +14,5 @@ private:
     int denominator; // integer denominator
     void reduce();
 }; // end class Rational
+
 #endif
