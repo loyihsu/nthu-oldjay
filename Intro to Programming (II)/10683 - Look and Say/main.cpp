@@ -2,39 +2,32 @@
 #include <iostream>
 #include <string>
 
-int main(void)
-{   
+int main(void) {
     int tcs, times, count;
     std::string str, output;
     std::cin >> tcs;
     char last;
     
-    auto app = [&output, &count, &last]()->void
-    {
+    auto app = [&output, &count, &last]()->void {
         output += std::to_string(count);
         output += last;
     };
     
-    while (tcs--)
-    {
+    while (tcs--) {
         str.clear();
+        output.clear();
         std::cin >> str;
         std::cin >> times;
-        output.clear();
-        while (times--)
-        {
-            if (!output.empty())
-            {
+        while (times--) {
+            if (!output.empty()) {
                 str = output;
                 output.clear();
             }
             
             count = 0;
             last = str.at(0);
-            for (auto s: str)
-            {
-                if (last == s)
-                {
+            for (auto s: str){
+                if (last == s) {
                     count++;
                 } else {
                     app();
