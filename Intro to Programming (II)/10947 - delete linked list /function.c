@@ -3,8 +3,7 @@
 
 int count;
 
-Node* newNode(int data)
-{
+Node* newNode(int data) {
     Node *new;
     new = (Node*)malloc(sizeof(Node));
     
@@ -14,14 +13,12 @@ Node* newNode(int data)
     return new;
 }
 
-Node* createList()
-{
+Node* createList() {
     int data = 0;
     Node *node = NULL, *new, *temp = NULL, *prev = NULL;
     new = (Node*)malloc(sizeof(Node));
     
-    while (1)
-    {
+    while (1) {
         scanf("%d", &data);
         if (data == -1)
             break;
@@ -31,49 +28,42 @@ Node* createList()
             {
                 node = new;
                 temp = node;
-            } else {
-                
-                while (temp != NULL)
-                {
+            } else {   
+                while (temp != NULL) {
                     prev = temp;
                     temp = temp->next;
                 }
                 temp = new;
                 prev->next = temp;
-                
             }
             count++;
         }
     }
+
     return node;
 }
 
 
-void deleteNode(Node ** nd, int data)
-{
+void deleteNode(Node ** nd, int data) {
     int flag = 0;
     Node *temp, *prev = NULL;
-    if ((*nd) != NULL)
-    {
-        if (data == 1)
-        {
+
+    if ((*nd) != NULL) {
+        if (data == 1) {
             (*nd) = (*nd)->next;
             count--;
-        } else if (data <= count)
-        {
+        } else if (data <= count) {
             temp = (*nd);
-            for (flag = 0; flag < data-1; flag++)
-            {
+            for (flag = 0; flag < data-1; flag++) {
                 prev = temp;
                 temp = temp->next;
             }
             
             if (temp->next != NULL)
-            {
                 prev->next = temp->next;
-            } else {
+            else
                 prev->next = NULL;
-            }
+                
             count--;
         }
     }
