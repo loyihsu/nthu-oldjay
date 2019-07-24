@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include "function.h"
 
-void printList(Node *head){
+void printList(Node *head) {
     Node *temp;
     for(temp = head; temp!=NULL; temp=temp->next) {
         printf("%d ", temp->data);
     }
 }
 
-void freeList(Node *head){
+void freeList(Node *head) {
     Node *temp;
     for(temp=head; temp!=NULL; temp=head){
         head = head->next;
@@ -17,8 +17,7 @@ void freeList(Node *head){
     }
 }
 
-int main()
-{
+int main() {
     Node *head;
     int data;
 

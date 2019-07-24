@@ -2,8 +2,7 @@
 #include <stdio.h>
 #include "function.h"
 
-Node* makeNode(int data)
-{
+Node* makeNode(int data) {
     Node *node = (Node*)malloc(sizeof(node));
     node->data = data;
     node->next = NULL;
@@ -11,24 +10,19 @@ Node* makeNode(int data)
     return node;
 }
 
-Node* createList()
-{
+Node* createList() {
     int data;
     Node *node = NULL, *new, *temp = NULL, *prev = NULL;
     
-    while (1)
-    {
+    while (1) {
         scanf("%d", &data);
-        if (data != -1)
-        {
+        if (data != -1) {
             new = makeNode(data);
-            if (node == NULL)
-            {
+            if (node == NULL) {
                 node = new;
                 temp = node;
             } else {
-                while (temp != NULL)
-                {
+                while (temp != NULL) {
                     prev = temp;
                     temp = temp->next;
                 }
@@ -40,25 +34,16 @@ Node* createList()
     return node;
 }
 
-void deleteNode(Node **nd, int data)
-{
+void deleteNode(Node **nd, int data) {
     Node *cp;
-    
     cp = (*nd);
-    
-    
-    //put aside the head first
-    while (cp->next != NULL)
-    {
+
+    while (cp->next != NULL) {
         if (cp->next->data == data)
-        {
             cp->next = cp->next->next;
-        } else cp = cp->next;
+        else cp = cp->next;
     }
     
-    //deal with the head
     if ((*nd)->data == data)
-    {
         (*nd) = (*nd)->next;
-    }
 }
