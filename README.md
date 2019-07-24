@@ -1,6 +1,6 @@
 # NTHU-OldJay
 
-NTHU-OldJay includes the solutions to the old NTHU Online Judge(OJ) problems I was faced with as I learned to programme in NTHU. These may include the problems from Introduction to Programming (I) and (II), Data Structure, and some other questions that I have practiced on the OJ system.
+NTHU-OldJay includes the solutions I can find or reproduce (if missing) to the old NTHU Online Judge (OJ) problems I was faced with as I learned to programme in NTHU. These may include the problems from Introduction to Programming (I) and (II), Data Structure, and some other questions that I have practiced on the OJ system.
 
 Steps of this project:
 
