@@ -22,21 +22,17 @@ int main() {
 	return 0;
 }
 
-void freeList(Node *head)
-{
+void freeList(Node *head) {
 	Node *temp;
-	for(temp=head; temp!=NULL; temp=head)
-	{
+	for(temp=head; temp!=NULL; temp=head) {
 		head = head->next;
 		free(temp);
 	}
 }
 
-void printList(Node *head)
-{
+void printList(Node *head) {
 	Node *temp;
-	for(temp = head; temp!=NULL; temp=temp->next)
-	{
+	for(temp = head; temp!=NULL; temp=temp->next) {
 		printf("%d ", temp->data);
 	}
 	printf("\n");
