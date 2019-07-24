@@ -2,24 +2,19 @@
 #include <iostream>
 #include <vector>
 
-int main(void)
-{
-    long long size, temp;
+int main(void) {
+    long long size, temp, count = 0, cul = 0;
     std::vector<long long> e;
     
-    while (std::cin >> size)
-    {
-        long long count = 0, cul = 0;
+    while (std::cin >> size) {
+        count = 0, cul = 0;
         e.clear();
-        while (std::cin >> temp, temp != 0)
-        {
-            e.push_back(temp);
-        }
         
-        for (auto E : e)
-        {
-            if (E + cul <= size)
-            {
+        while (std::cin >> temp, temp != 0)
+            e.push_back(temp);
+        
+        for (auto E : e) {
+            if (E + cul <= size) {
                 cul += E;
             } else {
                 count++;
@@ -30,6 +25,7 @@ int main(void)
         
         if (e.empty()) std::cout << 0 << "\n";
         else std::cout << count << "\n";
-        
     }
+
+    return 0;
 }
