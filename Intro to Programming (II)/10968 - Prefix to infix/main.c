@@ -2,12 +2,10 @@
 #include <stdlib.h>
 #include "function.h"
 
-void constructTree(Node** head)
-{
+void constructTree(Node** head) {
     char c;
 
-    if((*head)==NULL)
-    {
+    if((*head)==NULL) {
         (*head) = (Node *)malloc(sizeof(Node));
 		c = getchar();
 
@@ -22,23 +20,20 @@ void constructTree(Node** head)
     }
 }
 
-void freeTree(Node *root)
-{
-    if (root!=NULL)
-    {
+void freeTree(Node *root) {
+    if (root!=NULL) {
         freeTree(root->left);
         freeTree(root->right);
         free(root);
     }
 }
 
-int main(void)
-{
+int main(void) {
     int n;
+
     scanf("%d", &n);// the number of test cases
 
-    while(n>0)
-    {
+    while(n>0) {
         getchar();
         Node *root=NULL;
         constructTree(&root);// construct syntax tree
