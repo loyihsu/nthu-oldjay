@@ -1,21 +1,15 @@
 // Problem: http://140.114.86.238/problem/10962/
 #include "function.h"
 
-int Sum(Node *root)
-{
-    int left = 0, right = 0, roots = 0, sum = 0;
-    
-    int templ = 0, tempr = 0;
-    
+int Sum(Node *root) {
+    int left = 0, right = 0, roots = 0, sum = 0, templ = 0, tempr = 0;
+    Node *temp = root->left;
+
     roots = root->data;
     
-    Node *temp = root->left;
-    
-    while (temp != NULL)
-    {
+    while (temp != NULL) {
         left += temp->data;
-        if (temp->right != NULL)
-        {
+        if (temp->right != NULL) {
             templ = Sum(temp->right);
             left += templ;
         }
@@ -24,17 +18,15 @@ int Sum(Node *root)
     
     Node *tempw = root->right;
     
-    while (tempw != NULL)
-    {
+    while (tempw != NULL) {
         right += tempw->data;
-        if (tempw->left != NULL)
-        {
+        if (tempw->left != NULL) {
             tempr = Sum(tempw->left);
             right += tempr;
         }
         tempw = tempw->right;
     }
-    
     sum = right+left+roots;
+
     return sum;
 }

@@ -1,6 +1,5 @@
 #include <stdlib.h>
-typedef struct treeNode
-{
+typedef struct treeNode {
     int data;
     struct treeNode *left;
     struct treeNode *right;

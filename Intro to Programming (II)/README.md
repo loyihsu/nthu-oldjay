@@ -1,6 +1,6 @@
 # Intro to Programming (II)
 
-## Code Improvements Status ![Progress](http://progressed.io/bar/45)
+## Code Improvements Status ![Progress](http://progressed.io/bar/48)
 
 1. [x] 9240
 2. [x] 10477
@@ -19,7 +19,7 @@
 15. [x] 10954
 16. [x] 10955
 17. [x] 10961
-18. [ ] 10962
+18. [x] 10962
 19. [ ] 10966
 20. [ ] 10968 *
 21. [ ] 10972
@@ -69,7 +69,7 @@ Most of the assignments of the course was recorded on the OJ and some imcomplete
 ### List of Midterms and Final
 
 * [Mid 1](http://140.114.86.238/contest/939/)
-  * [ ] [10981 - Delete linked list ](http://140.114.86.238/problem/10981/)
+  * [ ] [10981 - Delete linked list](http://140.114.86.238/problem/10981/)
   * [ ] [10982 - Infix to truth table](http://140.114.86.238/problem/10982/)
   * [ ] [10984 - Prefix to syntax tree](http://140.114.86.238/problem/10984/)
   * [x] [10990 - cheat sheet](http://140.114.86.238/problem/10990/)
