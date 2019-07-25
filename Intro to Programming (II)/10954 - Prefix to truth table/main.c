@@ -4,52 +4,42 @@
 char expr[200];
 int pos;
 
-int exec(int a, int b, int c, int d)
-{
+int exec(int a, int b, int c, int d){
     char chat;
-    
     int op1, op2;
     
     chat = expr[pos++];
     
-    if (chat == '&')
-    {
+    if (chat == '&') {
         op1 = exec(a, b, c, d);
         op2 = exec(a, b, c, d);
         return op1 && op2;
-    } else if (chat == '|')
-    {
+    } else if (chat == '|') {
         op1 = exec(a, b, c, d);
         op2 = exec(a, b, c, d);
         return op1 || op2;
-    } else if (chat == 'A')
-    {
+    } else if (chat == 'A') {
         return a;
-    } else if (chat == 'B')
-    {
+    } else if (chat == 'B') {
         return b;
-    } else if (chat == 'C')
-    {
+    } else if (chat == 'C') {
         return c;
-    } else if (chat == 'D')
-    {
+    } else if (chat == 'D') {
         return d;
     }
+
     return -1;
 }
 
-int main(void)
-{
-    scanf("%s", expr);
+int main(void) {
     int i, j, k, l, output;
-    for (i = 0; i<2; i++)
-    {
-        for (j = 0; j<2; j++)
-        {
-            for (k = 0; k<2; k++)
-            {
-                for (l = 0; l<2; l++)
-                {
+
+    scanf("%s", expr);
+
+    for (i = 0; i<2; i++) {
+        for (j = 0; j<2; j++) {
+            for (k = 0; k<2; k++) {
+                for (l = 0; l<2; l++) {
                     pos = 0;
                     output = exec(i, j, k, l);
                     printf("%d %d %d %d %d\n", i, j, k, l, output);
@@ -57,6 +47,7 @@ int main(void)
             }
         }
     }
+    
     return 0;
 }
 
