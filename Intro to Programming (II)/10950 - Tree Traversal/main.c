@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include "function.h"
 
-int main(void)
-{
+int main(void) {
 	int *in, *pre, n, i;
 	scanf("%d", &n);// get the size of tree
 	in = (int *) malloc(n * sizeof(int));//allocate space for inorder
@@ -24,26 +23,22 @@ int main(void)
 	return 0;
 }
 
-int idxSearch(int arr[], int strt, int end, int value)
-{
+int idxSearch(int arr[], int strt, int end, int value) {
 	int i;
-	for (i = strt; i <= end; i++)
-	{
+	for (i = strt; i <= end; i++) {
 		if (arr[i] == value)
 			return i;
 	}
 }
 
-Node* newNode(int val)
-{
+Node* newNode(int val) {
 	Node *node = (Node *)malloc(sizeof(Node));;
 	node->data = val;
 	node->left = node->right = NULL;
 	return (node);
 }
 
-Node* constructTree(int inorder[], int preorder[], int inorder_start, int inorder_end)
-{
+Node* constructTree(int inorder[], int preorder[], int inorder_start, int inorder_end) {
 	static int preorder_idx = 0;
 	if(inorder_start > inorder_end)
 		return NULL;
@@ -57,13 +52,10 @@ Node* constructTree(int inorder[], int preorder[], int inorder_start, int inorde
 	return tree_node;
 }
 
-void destroyTree(Node *root)
-{
-	if(root != NULL)
-	{
+void destroyTree(Node *root) {
+	if(root != NULL) {
 		destroyTree(root->left);
 		destroyTree(root->right);
 		free(root);
 	}
 }
-
