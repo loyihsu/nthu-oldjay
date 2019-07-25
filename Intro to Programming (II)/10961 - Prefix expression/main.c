@@ -4,49 +4,39 @@
 
 int EXPR();
 
-int main(void)
-{
+int main(void) {
     int output;
     
-    output = EXPR();
-    
-    printf("%d", output);
+    printf("%d", EXPR());
     
     return 0;
 }
 
-int EXPR()
-{
-    char c = getchar();
-    char number[200];
-    
+int EXPR() {
+    char c = getchar(),number[200];
     int op1, op2;
     
     if (c == ' ')
-    {
         c = getchar();
-    }
     
-    if (c == '-')
-    {
+    if (c == '-') {
         op1 = EXPR();
         op2 = EXPR();
         return op1 - op2;
-    } else if (c == '+')
-    {
+    } else if (c == '+') {
         op1 = EXPR();
         op2 = EXPR();
         return op1 + op2;
     } else {
         number[0] = c;
         int i = 1;
-        while (c != ' ')
-        {
+        while (c != ' ') {
             c = getchar();
             number[i] = c;
             i++;
         }
         return atoi(number);
     }
+    
     return -1;
 }
