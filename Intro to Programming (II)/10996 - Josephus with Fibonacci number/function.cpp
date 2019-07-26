@@ -2,24 +2,21 @@
 #include <iostream>
 #include "function.h"
 
-Josephus::Josephus()
-{
+Josephus::Josephus() {
     for (int i = 0; i < 50; i++)
         sequence[i] = 0;
     noOfPeople = 0;
     head = nullptr;
 }
 
-Josephus::~Josephus()
-{
+Josephus::~Josephus() {
     for (int i = 0; i < 50; i++)
         sequence[i] = 0;
     noOfPeople = 0;
     head = nullptr;
 }
 
-Josephus::Josephus(const int &no)
-{
+Josephus::Josephus(const int &no) {
     for (int i = 0; i < 50; i++)
         sequence[i] = 0;
     noOfPeople = no;
@@ -29,22 +26,17 @@ Josephus::Josephus(const int &no)
     generatecircularlinkedList(no);
 }
 
-int Josephus::kill()
-{
+int Josephus::kill() {
     Node *prev, *temp;
-    
-    temp = prev = head;
-    
     int k = 0, i = 0, j = 0, flag = 0, remain = 0;
-    
-    while (temp != temp->next)
-    {
+
+    temp = prev = head;
+
+    while (temp != temp->next) {
         k = sequence[j++];
         
-        if (k == 1 && flag == 0)
-        {
-            for (i = 0; i < noOfPeople; i++)
-            {
+        if (k == 1 && flag == 0) {
+            for (i = 0; i < noOfPeople; i++) {
                 prev = temp;
                 temp = temp->next;
             }
@@ -59,8 +51,7 @@ int Josephus::kill()
             if (remain == 0)
                 remain = noOfPeople;
             
-            for (i = 0; i < remain - 1; i++)
-            {
+            for (i = 0; i < remain - 1; i++) {
                 prev = temp;
                 temp = temp->next;
             }
@@ -74,19 +65,14 @@ int Josephus::kill()
     return temp->number;
 }
 
-void Josephus::generatecircularlinkedList(const int &no)
-{
-    for (int i = 1; i <= no; i++)
-    {
-        if (head == nullptr)
-        {
+void Josephus::generatecircularlinkedList(const int &no) {
+    for (int i = 1; i <= no; i++) {
+        if (head == nullptr) {
             head = new Node(i);
         } else {
             Node *temp = head;
             while (temp->next != nullptr)
-            {
                 temp = temp->next;
-            }
             
             temp->next = new Node(i);
         }
@@ -94,15 +80,12 @@ void Josephus::generatecircularlinkedList(const int &no)
     
     Node *temp = head;
     while (temp->next != nullptr)
-    {
         temp = temp->next;
-    }
-    temp->next = head;
-    
+
+    temp->next = head;    
 }
 
-void Josephus::generateFib(const int &no)
-{
+void Josephus::generateFib(const int &no) {
     int pos = 0;
     sequence[0] = 1;
     sequence[1] = 1;

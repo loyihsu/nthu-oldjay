@@ -1,8 +1,8 @@
 #ifndef FUNCTION_H
 #define FUNCTION_H
 #include <iostream>
-class Node
-{
+
+class Node {
    friend class Josephus;
    public:
         Node():next( NULL ){
@@ -16,8 +16,7 @@ class Node
         int number;
 };//end class Node
 
-class Josephus
-{
+class Josephus {
     public:
          Josephus();
          ~Josephus();
