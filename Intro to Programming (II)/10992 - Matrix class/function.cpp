@@ -3,8 +3,7 @@
 #include <stdio.h>
 #include "function.h"
 
-Matrix::Matrix()
-{
+Matrix::Matrix() {
     int i, j;
     
     for(i = 0; i < 50; i++)
@@ -14,8 +13,7 @@ Matrix::Matrix()
     matrix_size = 0;
 }
 
-Matrix::Matrix(const int size, const int array[50][50])
-{
+Matrix::Matrix(const int size, const int array[50][50]) {
     int i, j;
     
     for(i = 0; i < 50; i++)
@@ -29,8 +27,7 @@ Matrix::Matrix(const int size, const int array[50][50])
             matrix[i][j] = array[i][j];
 }
 
-Matrix Matrix::add (const Matrix ee) const
-{
+Matrix Matrix::add (const Matrix ee) const {
     Matrix output;
     int i, j;
     
@@ -43,8 +40,7 @@ Matrix Matrix::add (const Matrix ee) const
     return output;
 }
 
-Matrix Matrix::subtract (const Matrix ee) const
-{
+Matrix Matrix::subtract (const Matrix ee) const {
     Matrix output;
     int i, j;
     
@@ -57,8 +53,7 @@ Matrix Matrix::subtract (const Matrix ee) const
     return output;
 }
 
-Matrix Matrix::multiplication (const Matrix ee) const
-{
+Matrix Matrix::multiplication (const Matrix ee) const {
     Matrix output;
     int i, j, k;
     
@@ -72,8 +67,7 @@ Matrix Matrix::multiplication (const Matrix ee) const
     return output;
 }
 
-Matrix Matrix::inc() const
-{
+Matrix Matrix::inc() const {
     int i, j;
     Matrix output;
     
@@ -86,20 +80,16 @@ Matrix Matrix::inc() const
     return output;
 }
 
-void Matrix::Transpose() const
-{
+void Matrix::Transpose() const {
     Matrix output;
-    
     int i, j;
     
     for (i = 0; i < matrix_size; i++)
         for (j = 0; j < matrix_size; j++)
             output.matrix[j][i] = matrix[i][j];
     
-    for (i = 0; i < matrix_size; i++)
-    {
-        for (j = 0; j < matrix_size; j++)
-        {
+    for (i = 0; i < matrix_size; i++) {
+        for (j = 0; j < matrix_size; j++) {
             std::cout << output.matrix[i][j];
             if (j == matrix_size-1)
                 std::cout << "\n";
@@ -109,14 +99,11 @@ void Matrix::Transpose() const
     }
 }
 
-void Matrix::output() const
-{
+void Matrix::output() const {
     int i, j;
     
-    for (i = 0; i < matrix_size; i++)
-    {
-        for (j = 0; j < matrix_size; j++)
-        {
+    for (i = 0; i < matrix_size; i++) {
+        for (j = 0; j < matrix_size; j++) {
             std::cout << matrix[i][j];
             if (j == matrix_size-1)
                 std::cout << "\n";

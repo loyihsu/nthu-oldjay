@@ -3,9 +3,8 @@
 #include "function.h"
 using namespace std;
 
-int main(){
-    int N;
-    int matrix1[50][50], matrix2[50][50];
+int main() {
+    int N, matrix1[50][50], matrix2[50][50];
     Matrix ans;
     
     cin >> N;

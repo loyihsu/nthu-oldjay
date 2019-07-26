@@ -1,9 +1,7 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-class Matrix
-{
-
+class Matrix {
 public:
     Matrix();
     Matrix (const int , const int [50][50]);
