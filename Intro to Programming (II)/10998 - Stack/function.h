@@ -2,8 +2,7 @@
 #define FUNCTION_H
 #include <iostream>
 
-class ListNode
-{
+class ListNode {
     friend class List_stack; //make List_stack a friend
     public:
         ListNode( const int &info ) //constructor

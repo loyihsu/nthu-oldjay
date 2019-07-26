@@ -3,10 +3,11 @@
 #include "function.h"
 using namespace std;
 
-int main(){
+int main() {
     List_stack L_stack;
     char command[10];
     int n;
+
     while(cin>>command){
 
         if(strcmp(command,"pop")==0){
@@ -19,5 +20,6 @@ int main(){
             cout << endl;
         }
     }
+    
     return 0;
 }
