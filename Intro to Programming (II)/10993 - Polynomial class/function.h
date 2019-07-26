@@ -2,9 +2,7 @@
 #define POLYNOMIAL_H
 #include <iostream>
 
-class Polynomial
-{
-
+class Polynomial {
 public:
     Polynomial();
     Polynomial(const int , const int [51]);
