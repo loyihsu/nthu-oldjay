@@ -3,16 +3,13 @@
 #include "function.h"
 using namespace std;
 
-int main(){
-    int matrixsize;
-    int matrix1[50][50];
+int main() {
+    int matrixsize, matrix1[50][50];
 
     cin >> matrixsize;
-    for (int i = 0; i<matrixsize; i++) {
-        for (int j = 0; j<matrixsize; j++) {
+    for (int i = 0; i<matrixsize; i++)
+        for (int j = 0; j<matrixsize; j++)
             cin >> matrix1[i][j];
-        }
-    }
 
     int s1, s2;
     cin >> s1 >> s2;
@@ -33,6 +30,4 @@ int main(){
     cout << endl;
 
     a.symmetric();
-
 } // end main
-
