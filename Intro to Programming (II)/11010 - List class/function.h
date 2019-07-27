@@ -1,8 +1,9 @@
 #ifndef FUNCTION_H
 #define FUNCTION_H
+
 #include <iostream>
-class ListNode
-{
+
+class ListNode {
     friend class OWList; //make OWList a friend
     friend class TWList; //make TWList a friend
 
@@ -18,8 +19,7 @@ private:
 }; //end class ListNode
 
 
-class OWList
-{
+class OWList {
 public:
     //default constructor
     OWList();
@@ -40,20 +40,17 @@ protected:
 
 }; // end class List
 
-class TWList:public OWList
-{
+class TWList:public OWList {
 public:
     //default constructor
     TWList()
-    :OWList()
-    {
+    :OWList() {
         /*It will still work correctly if you omit the constructor call of the base
           class in the above member initializer list. The compiler will invoke this
           default constructor of OWList implicitly.*/
     }
     //destructor
-    ~TWList()
-    {
+    ~TWList() {
         /*You don't need to delete the list again because the compiler
           will invoke the destructor of the base class OWList to do this.*/
     }

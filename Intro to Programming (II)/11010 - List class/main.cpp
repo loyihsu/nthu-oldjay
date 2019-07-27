@@ -1,17 +1,15 @@
 #include <iostream>
 #include <string>
 #include "function.h"
-using namespace std;
-int main()
-{
-    TWList integerList;
-    int command;
-    int value; // store node value
 
-    while (cin >> command)
-    {
-        switch(command)
-        {
+using namespace std;
+
+int main() {
+    TWList integerList;
+    int command, value;
+
+    while (cin >> command) {
+        switch(command) {
         case 1: // insert at beginning
             cin >> value;
             integerList.insertAtFront(value);
@@ -29,5 +27,5 @@ int main()
         }
     }
     integerList.print();
-    cout<<endl;
+    cout << endl;
 }

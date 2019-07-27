@@ -1,22 +1,18 @@
-// Problem: http://140.114.86.238/problem/
+// Problem: http://140.114.86.238/problem/11010
 #include <iostream>
 #include <string>
 #include "function.h"
 
-OWList::OWList()
-{
+OWList::OWList() {
     firstPtr = lastPtr = nullptr;
 }
 
-OWList::~OWList()
-{
+OWList::~OWList() {
     firstPtr = lastPtr = nullptr;
 }
 
-void OWList::insertAtFront(const int &value)
-{
-    if (firstPtr == nullptr)
-    {
+void OWList::insertAtFront(const int &value) {
+    if (firstPtr == nullptr) {
         firstPtr = new ListNode(value);
         lastPtr = firstPtr;
     } else {
@@ -26,12 +22,9 @@ void OWList::insertAtFront(const int &value)
     }
 }
 
-void OWList::removeFromFront()
-{
-    if (firstPtr)
-    {
-        if (firstPtr->nextPtr)
-        {
+void OWList::removeFromFront() {
+    if (firstPtr) {
+        if (firstPtr->nextPtr) {
             firstPtr = firstPtr->nextPtr;
         } else {
             delete firstPtr;
@@ -41,19 +34,16 @@ void OWList::removeFromFront()
     }
 }
 
-bool OWList::isEmpty() const
-{
+bool OWList::isEmpty() const {
     if (firstPtr == nullptr)
         return true;
     else
         return false;
 }
 
-void OWList::print() const
-{
+void OWList::print() const {
     ListNode *temp = firstPtr;
-    while (temp != nullptr)
-    {
+    while (temp != nullptr) {
         std::cout << temp->data;
         if (temp->nextPtr != nullptr)
             std::cout << " ";
@@ -61,30 +51,25 @@ void OWList::print() const
     }
 }
 
-void TWList::insertAtBack(const int &value)
-{
-    if (firstPtr == nullptr)
-    {
+void TWList::insertAtBack(const int &value) {
+    if (firstPtr == nullptr) {
         firstPtr = new ListNode(value);
         lastPtr = firstPtr;
         return;
     }
     
-    while (lastPtr->nextPtr != nullptr)
-    {
+    while (lastPtr->nextPtr != nullptr) {
         lastPtr = lastPtr->nextPtr;
     }
+
     lastPtr->nextPtr = new ListNode(value);
     lastPtr = firstPtr;
 }
 
-void TWList::removeFromBack()
-{
-    if (lastPtr != nullptr)
-    {
+void TWList::removeFromBack() {
+    if (lastPtr != nullptr) {
         ListNode *prev = lastPtr;
-        while (lastPtr->nextPtr != nullptr)
-        {
+        while (lastPtr->nextPtr != nullptr) {
             prev = lastPtr;
             lastPtr = lastPtr->nextPtr;
         }
