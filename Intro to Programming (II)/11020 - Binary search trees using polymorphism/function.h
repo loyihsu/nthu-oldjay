@@ -1,4 +1,3 @@
-
 #ifndef function_h
 #define function_h
 
@@ -54,15 +53,14 @@ private:
 class List_BST : public BST{
 public:
     List_BST();
-    virtual ~List_BST()
-    {
+    virtual ~List_BST() {
         deleteTree(root);
     }
     virtual void insert(const int &) override;
     virtual bool search(const int &) const override;
     virtual void print() const override{
         int i;
-        for(i = 1; i <= Height; i++){
+        for(i = 1; i <= Height; i++) {
             printGivenLevel(root, i);
         }
     }
@@ -79,8 +77,7 @@ private:
             return;
         if (level == 1)
             cout << Ptr->key << " ";
-        else if (level > 1)
-        {
+        else if (level > 1) {
             printGivenLevel(Ptr->left, level-1);
             printGivenLevel(Ptr->right, level-1);
         }
