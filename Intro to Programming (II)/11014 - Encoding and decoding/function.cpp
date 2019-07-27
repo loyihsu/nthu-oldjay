@@ -5,34 +5,26 @@
 #include <cctype>
 #include "function.h"
 
-void RleCodec::encode()
-{
+void RleCodec::encode() {
     std::string output;
     int num = 0, i;
-    
     char last;
     
-    auto append = [&]() -> void
-    {
-        if (num <= 2)
-        {
+    auto append = [&]() -> void {
+        if (num <= 2) {
             for (i = 0; i < num; i++)
-            {
                 output.push_back(last);
-            }
         } else {
             output += std::to_string(num) + last;
         }
-        
     };
     
-    if (!code_str.empty())
-    {
+    if (!code_str.empty()) {
         last = code_str[0];
-        for (auto c : code_str)
-        {
-            if (c == last) num++;
-            else {
+        for (auto c : code_str) {
+            if (c == last) {
+                num++;
+            } else {
                 append();
                 num = 1;
                 last = c;
@@ -45,8 +37,7 @@ void RleCodec::encode()
     encoded = true;
 }
 
-void RleCodec::decode()
-{
+void RleCodec::decode() {
     std::stringstream os;
     std::string int_str;
     for (auto c : code_str) {
@@ -69,5 +60,3 @@ void RleCodec::decode()
     code_str = os.str();
     encoded = false;
 }
-
-

@@ -1,14 +1,12 @@
 #include <iostream>
 #include "function.h"
 
-std::ostream& operator<<(std::ostream& os, Codec& data)
-{
+std::ostream& operator<<(std::ostream& os, Codec& data) {
     data.show(os);
     return os;
 }
 
-void encode_decode(Codec & data)
-{
+void encode_decode(Codec & data) {
     if (!data.is_encoded())
         data.encode();
     else
@@ -16,8 +14,7 @@ void encode_decode(Codec & data)
 }
 
 
-int main()
-{
+int main() {
     std::string input_string;
     std::cin >> input_string;
 
