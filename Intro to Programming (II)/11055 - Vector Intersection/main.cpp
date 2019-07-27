@@ -3,29 +3,27 @@
 #include <vector>
 #include <algorithm>
 
-int main(void)
-{
+int main(void) {
     std::ios::sync_with_stdio(false);
+
     std::vector<int> set1, set2, output;
-    
     int eles1, eles2, i, temp;
     
-    while (std::cin >> eles1, eles1)
-    {
+    while (std::cin >> eles1, eles1) {
         output.clear();
         set1.clear();
         set2.clear();
+
         i = eles1;
-        while(i--)
-        {
+        
+        while(i--) {
             std::cin >> temp;
             set1.push_back(temp);
         }
         
         std::cin >> eles2;
         i = eles2;
-        while(i--)
-        {
+        while(i--) {
             std::cin >> temp;
             set2.push_back(temp);
         }
@@ -35,12 +33,11 @@ int main(void)
         
         std::set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(output, output.begin()));
         
-        if (output.empty())
+        if (output.empty()) {
             std::cout << "empty" << std::endl;
-        else {
+        } else {
             auto t = output.begin();
-            for (auto o: output)
-            {
+            for (auto o: output) {
                 t++;
                 std::cout << o;
                 if (t != output.end())
@@ -49,5 +46,6 @@ int main(void)
             std::cout << std::endl;
         }   
     }
+
     return 0;
 }
