@@ -3,11 +3,9 @@
 #include <string>
 #include "function.h"
 
-std::ostream &operator<<(std::ostream &os, const Polynomial &pol)
-{
+std::ostream &operator<<(std::ostream &os, const Polynomial &pol){
     int i;
-    for (i = pol.greatestPower; i >= 0 ; i--)
-    {
+    for (i = pol.greatestPower; i >= 0 ; i--) {
         os << pol.coefficients[i];
         if (i != 0)
             os << " ";
@@ -15,8 +13,7 @@ std::ostream &operator<<(std::ostream &os, const Polynomial &pol)
     return os;
 }
 
-Polynomial::Polynomial()
-{
+Polynomial::Polynomial(){
     int i;
     
     for (i = 0 ; i < 101; i++)
@@ -24,8 +21,7 @@ Polynomial::Polynomial()
     greatestPower = 0;
 }
 
-Polynomial::Polynomial(const int &gp, const int array[51])
-{
+Polynomial::Polynomial(const int &gp, const int array[51]) {
     int i;
     
     for (i = 0 ; i < 101; i++)
@@ -36,8 +32,7 @@ Polynomial::Polynomial(const int &gp, const int array[51])
         coefficients[i] = array[i];
 }
 
-Polynomial Polynomial::operator+( const Polynomial &ee ) const
-{
+Polynomial Polynomial::operator+( const Polynomial &ee ) const {
     Polynomial output;
     int i;
     
@@ -49,8 +44,7 @@ Polynomial Polynomial::operator+( const Polynomial &ee ) const
     return output;
 }
 
-Polynomial Polynomial::operator-( const Polynomial &ee ) const
-{
+Polynomial Polynomial::operator-( const Polynomial &ee ) const {
     Polynomial output;
     int i;
     
@@ -62,8 +56,7 @@ Polynomial Polynomial::operator-( const Polynomial &ee ) const
     return output;
 }
 
-Polynomial Polynomial::operator*( const Polynomial &ee ) const
-{
+Polynomial Polynomial::operator*( const Polynomial &ee ) const {
     Polynomial output;
     int i, j;
     

@@ -1,8 +1,8 @@
 #ifndef POLYNOMIAL_H
 #define POLYNOMIAL_H
+
 #include <iostream>
-class Polynomial
-{
+class Polynomial {
     friend std::ostream &operator<<(std::ostream &, const Polynomial &);
 public:
     Polynomial();

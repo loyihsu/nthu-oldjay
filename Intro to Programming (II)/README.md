@@ -1,6 +1,6 @@
 # Intro to Programming (II)
 
-## Code Improvements Status ![Progress](http://progressed.io/bar/72)
+## Code Improvements Status ![Progress](http://progressed.io/bar/75)
 
 1. [x] 9240
 2. [x] 10477
@@ -29,7 +29,7 @@
 25. [x] 10996
 26. [x] 10997
 27. [x] 10998
-28. [ ] 11001
+28. [x] 11001
 29. [ ] 11002
 30. [ ] 11003
 31. [ ] 11008
