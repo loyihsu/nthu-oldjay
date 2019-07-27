@@ -2,29 +2,25 @@
 #include <iostream>
 #include "function.h"
 
-std::ostream &operator<<(std::ostream &os, const Rational &rat)
-{
+std::ostream &operator<<(std::ostream &os, const Rational &rat) {
     os << rat.numerator << "/" << rat.denominator;
     return os;
 }
 
-Rational::Rational(int num, int den)
-{
+Rational::Rational(int num, int den) {
     numerator = num;
     denominator = den;
     reduce();
 }
 
-int abs_val(int a)
-{
+int abs_val(int a) {
     if (a < 0)
         a *= -1;
     
     return a;
 }
 
-int dgi(int a, int b)
-{
+int dgi(int a, int b) {
     int output = 1;
     
     for (int i = 1; i <= ((abs_val(a) < abs_val(b))? abs_val(a) : abs_val(b)); i++)
@@ -35,17 +31,14 @@ int dgi(int a, int b)
     return output;
 }
 
-int sgb(int a, int b)
-{
+int sgb(int a, int b) {
     return (abs_val(a) * abs_val(b))/dgi(a, b);
 }
 
-Rational Rational::operator+( const Rational &ee ) const
-{
+Rational Rational::operator+( const Rational &ee ) const {
     int a = 1, b = 1;
     Rational output;
-    if (denominator == ee.denominator)
-    {
+    if (denominator == ee.denominator) {
         output.denominator = denominator;
     } else {
         output.denominator = sgb(denominator, ee.denominator);
@@ -59,8 +52,7 @@ Rational Rational::operator+( const Rational &ee ) const
     return output;
 }
 
-Rational Rational::operator-( const Rational &ee ) const
-{
+Rational Rational::operator-( const Rational &ee ) const {
     int a = 1, b = 1;
     Rational output;
     if (denominator == ee.denominator)
@@ -78,9 +70,9 @@ Rational Rational::operator-( const Rational &ee ) const
     return output;
 }
 
-Rational Rational::operator*( const Rational &ee ) const
-{
+Rational Rational::operator*( const Rational &ee ) const {
     Rational output;
+
     output.numerator = numerator * ee.numerator;
     output.denominator = denominator * ee.denominator;
     output.reduce();
@@ -88,9 +80,9 @@ Rational Rational::operator*( const Rational &ee ) const
     return output;
 }
 
-Rational Rational::operator/( const Rational &ee ) const
-{
+Rational Rational::operator/( const Rational &ee ) const {
     Rational output;
+
     output.numerator = numerator * ee.denominator;
     output.denominator = denominator * ee.numerator;
     output.reduce();
@@ -98,10 +90,8 @@ Rational Rational::operator/( const Rational &ee ) const
     return output;
 }
 
-void Rational::reduce()
-{
-    if (denominator < 0)
-    {
+void Rational::reduce() {
+    if (denominator < 0) {
         denominator *= -1;
         numerator *= -1;
     }

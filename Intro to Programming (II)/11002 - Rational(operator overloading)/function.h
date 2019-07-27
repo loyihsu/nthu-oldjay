@@ -1,8 +1,7 @@
 #ifndef RATIONAL_H
 #define RATIONAL_H
 
-class Rational
-{
+class Rational {
     friend std::ostream &operator<<(std::ostream &, const Rational &);
 public:
     Rational( int = 0, int = 1 ); // default constructor
