@@ -1,6 +1,6 @@
 # Intro to Programming (II)
 
-## Code Improvements Status ![Progress](http://progressed.io/bar/91)
+## Code Improvements Status ![Progress](http://progressed.io/bar/97)
 
 1. [x] 9240
 2. [x] 10477
@@ -35,9 +35,8 @@
 31. [x] 11010
 32. [x] 11014
 33. [x] 11020
-34. [ ] 11028
-35. [ ] 11053
-36. [ ] 11055
+34. [x] 11053
+35. [ ] 11055
 
 ## List of Labs and Tests
 
