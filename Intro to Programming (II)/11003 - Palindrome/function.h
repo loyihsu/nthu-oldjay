@@ -2,8 +2,7 @@
 #define SIMPLESTRING_H
 #include <iostream>
 
-class SimpleString
-{
+class SimpleString {
 public:
     SimpleString( char* = NULL, int = 0 ); // default constructor
     SimpleString( const SimpleString & ); // copy constructor
@@ -15,17 +14,15 @@ private:
     size_t size; // pointer-based string size
     char *ptr; // pointer to first element of pointer-based string
 }; // end class SimpleString
-class PalindromeChecker
-{
+
+class PalindromeChecker {
 public:
-    PalindromeChecker(const SimpleString &s)
-    {
+    PalindromeChecker(const SimpleString &s) {
         str = s;
         rev = s;
         rev.reverse();
     };
-    void isPalindrome()
-    {
+    void isPalindrome() {
         if(rev == str)
             std::cout << "Yes\n";
         else

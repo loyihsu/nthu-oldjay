@@ -4,28 +4,24 @@
 #include <cstdlib>
 #include "function.h"
 
-SimpleString::SimpleString(char *ch, int s)
-{
+SimpleString::SimpleString(char *ch, int s) {
     int size_;
     
     if (s > 0)
         size_ = 1;
-    else {
+    else
         size_ = s;
-    }
     
     if (ptr == nullptr)
         ptr = (char*)calloc(size_, sizeof(char));
 
-    
     if (ch != nullptr)
         strcpy(ptr, ch);
     
     size = s;
 }
 
-SimpleString::SimpleString(const SimpleString &ss)
-{
+SimpleString::SimpleString(const SimpleString &ss) {
     if (ptr == nullptr)
         ptr = (char*)calloc(ss.size, sizeof(char));
     
@@ -33,16 +29,13 @@ SimpleString::SimpleString(const SimpleString &ss)
     strcpy(ptr, ss.ptr);
 }
 
-SimpleString::~SimpleString()
-{
+SimpleString::~SimpleString() {
     memset(ptr, 0, sizeof(char));
     size = 0;
 }
 
-const SimpleString &SimpleString::operator=( const SimpleString &ss )
-{
-    if (&ss != this)
-    {
+const SimpleString &SimpleString::operator=( const SimpleString &ss ) {
+    if (&ss != this) {
         if (ptr == nullptr)
             ptr = (char*)calloc(ss.size, sizeof(char));
         strcpy(ptr, ss.ptr);
@@ -52,24 +45,17 @@ const SimpleString &SimpleString::operator=( const SimpleString &ss )
     return *this;
 }
 
-bool SimpleString::operator==( const SimpleString &ss ) const
-{
+bool SimpleString::operator==( const SimpleString &ss ) const {
     if (!strcmp(ptr,ss.ptr)) return true;
     else return false;
 }
 
-void SimpleString::reverse()
-{
+void SimpleString::reverse() {
     char *temp = (char*)calloc(size, sizeof(char));
     int i;
     
     for (i = 0; i < size; i++)
-    {
         temp[i] = ptr[size-1-i];
-    }
     
     strcpy(ptr, temp);
 }
-
-
-

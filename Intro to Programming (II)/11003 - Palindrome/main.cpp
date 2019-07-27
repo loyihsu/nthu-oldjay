@@ -4,12 +4,10 @@
 
 using namespace std;
 
-int main()
-{
-
+int main() {
     char input[100001];
+    
     while(cin >> input){
-
     	SimpleString s(input, strlen(input));
         PalindromeChecker c(s);
         c.isPalindrome();
