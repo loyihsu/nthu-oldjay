@@ -19,8 +19,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-bool palindrome(std::string input)
-{
+bool palindrome(std::string input) {
     if (input.empty() || input.size() == 1)
         return true;
     else
@@ -30,23 +29,16 @@ bool palindrome(std::string input)
     return false;
 }
 
-bool generator(std::string str, int n)
-{
-    if (palindrome(str))
-    {
+bool generator(std::string str, int n) {
+    if (palindrome(str)) {
         return true;
     } else {
-        if (n > 0)
-        {
-            for (int i = 0; i < str.size(); i++)
-            {
+        if (n > 0) {
+            for (int i = 0; i < str.size(); i++) {
                 std::string temp = str;
                 temp.erase(temp.begin()+i);
-                //std::cout << n << ": " << temp << std::endl;
                 if (generator(temp, n-1))
-                {
                     return true;
-                }
             }
         }
     }
