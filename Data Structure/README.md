@@ -1,8 +1,8 @@
 # Data Structure
 
-## Code Improvements Status (0%)
+## Code Improvements Status (![Progress](http://progressed.io/bar/7))
 
-1. [ ] 11834
+1. [x] 11834
 2. [ ] 11844
 3. [ ] 11859
 4. [ ] 11865
