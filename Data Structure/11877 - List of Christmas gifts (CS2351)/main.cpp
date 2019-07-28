@@ -30,12 +30,10 @@ private:
     listItem *first;
 };
 
-bool myList::find(int price)
-{
+bool myList::find(int price) {
     listItem *cur = first;
     
-    while (cur != NULL)
-    {
+    while (cur != NULL) {
         if (cur->price == price)
             return true;
         
@@ -49,17 +47,13 @@ void myList::create(){
     first = NULL;
 }
 
-void myList::insertBack(std::string item, int price)
-{
-    if (first != NULL)
-    {
+void myList::insertBack(std::string item, int price) {
+    if (first != NULL) {
         listItem *cur = first;
         
         listItem *newNode = new listItem(item, price);
-        while (cur != NULL)
-        {
-            if (cur->next == NULL)
-            {
+        while (cur != NULL) {
+            if (cur->next == NULL) {
                 cur->next = newNode;
                 break;
             } else {
@@ -72,17 +66,13 @@ void myList::insertBack(std::string item, int price)
     }
 }
 
-void myList::insertAfter(std::string item, int price, int priceAfter)
-{
+void myList::insertAfter(std::string item, int price, int priceAfter) {
     listItem *cur = first;
     listItem *newNode = new listItem(item, price), *temp = NULL;
     
-    while (cur != NULL)
-    {
-        if (cur->next == NULL)
-        {
-            if (cur->price == priceAfter)
-            {
+    while (cur != NULL) {
+        if (cur->next == NULL) {
+            if (cur->price == priceAfter) {
                 cur->next = newNode;
             }
         } else if (cur->price == priceAfter) {
@@ -96,17 +86,13 @@ void myList::insertAfter(std::string item, int price, int priceAfter)
     
 }
 
-void myList::deleteAt(int price)
-{
+void myList::deleteAt(int price) {
     listItem *cur = first;
     listItem *prev = NULL;
     
-    while (cur != NULL)
-    {
-        if (cur->price == price)
-        {
-            if (cur == first)
-            {
+    while (cur != NULL) {
+        if (cur->price == price) {
+            if (cur == first) {
                 first = first->next;
                 break;
             } else {
@@ -122,8 +108,7 @@ void myList::deleteAt(int price)
     }
 }
 
-void myList::reverse()
-{
+void myList::reverse() {
     listItem *cur = NULL, *prev = NULL, *next = NULL;
    
     next = first;
@@ -140,13 +125,11 @@ void myList::reverse()
     return;
 }
 
-bool myList::empty()
-{
+bool myList::empty() {
     return first == NULL;
 }
 
-void myList::show()
-{
+void myList::show() {
     listItem *index = first;
     
     while (index != NULL)
@@ -170,33 +153,27 @@ int main(int argc, const char * argv[]) {
     
     myGiftList.create();
     
-    while (std::cin >> command && command != "End")
-    {
-        if (command == "InsertBack")
-        {
+    while (std::cin >> command && command != "End") {
+        if (command == "InsertBack") {
             std::cin >> gift;
             std::cin >> price;
             if (!myGiftList.find(price))
                 myGiftList.insertBack(gift, price);
-        } else if (command == "InsertAfter")
-        {
+        } else if (command == "InsertAfter") {
             std::cin >> gift;
             std::cin >> price;
             std::cin >> priceAfter;
             if (!myGiftList.find(price))
                 myGiftList.insertAfter(gift, price, priceAfter);
-        } else if (command == "Delete")
-        {
+        } else if (command == "Delete") {
             std::cin >> price;
             myGiftList.deleteAt(price);
-        } else if (command == "Reverse")
-        {
+        } else if (command == "Reverse") {
             myGiftList.reverse();
         }
     }
     
-    if (myGiftList.empty())
-    {
+    if (myGiftList.empty()) {
         std::cout << "Empty" << std::endl;
     } else {
         std::cout << "List" << std::endl;
