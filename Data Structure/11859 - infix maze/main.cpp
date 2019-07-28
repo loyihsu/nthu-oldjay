@@ -429,7 +429,6 @@ bool findWay(int cur_x, int cur_y, int width, int height, char **temp, result<ch
             }
         }
         
-        //up
         next_y = cur_y;
         next_x = cur_x - 1;
         if (next_x >= 0 && next_y >= 0)
