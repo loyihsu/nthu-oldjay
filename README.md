@@ -10,6 +10,7 @@ Steps of this project:
     2. [x] I2P (II)
     3. [ ] Data Structure
     4. [x] Others
+3. [ ] Move everything out of the folders
 
 If something goes wrong please let me know, I will look into it. You are free to use any of the codes of NTHU-OldJay.
 
@@ -71,21 +72,6 @@ The following are the list of codes that are missing or stored at a place not ac
 
 * [Lab 0](http://140.114.86.238/contest/917/)
   * [ ] [10943 - Search Dictionary](http://140.114.86.238/problem/10943/)
-* [Lab 1](http://140.114.86.238/contest/922/)
-  * [x] [10948 - Delete linked list test](http://140.114.86.238/problem/10948/)
-* [Lab 2](http://140.114.86.238/contest/925/)
-  * [x] [10962 - Find Sum in a binary tree](http://140.114.86.238/problem/10962/)
-* [Lab 3](http://140.114.86.238/contest/930/)
-  * [x] [10955 - Prefix to truth table 2](http://140.114.86.238/problem/10955/)
-* [Lab 4](http://140.114.86.238/contest/933/)
-  * [x] [10969 - Attachment](http://140.114.86.238/problem/10969/)
-  * [x] [10972 - Remove unnecessary parentheses](http://140.114.86.238/problem/10972/)
-* [Lab 5](http://140.114.86.238/contest/946/)
-  * [x] [10994 - Matrix class test](http://140.114.86.238/problem/10994/)
-* [Lab 6](http://140.114.86.238/contest/950/)
-  * [x] [10998 - Stack](http://140.114.86.238/problem/10998/)
-* [Lab 7](http://140.114.86.238/contest/955/)
-  * [x] [11002 - Rational (operator overloading)](http://140.114.86.238/problem/11002/)
 * [Lab 8](http://140.114.86.238/contest/970/)
   * [ ] [11029 - extend](http://140.114.86.238/problem/11029/)
 
