@@ -1,6 +1,6 @@
 # Data Structure
 
-## Code Improvements Status (![Progress](http://progressed.io/bar/33))
+## Code Improvements Status ![Progress](http://progressed.io/bar/33)
 
 1. [x] 11834
 2. [x] 11844
