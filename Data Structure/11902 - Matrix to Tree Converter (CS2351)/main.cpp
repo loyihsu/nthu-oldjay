@@ -4,13 +4,12 @@
 template <class T>
 class myQueue {
 public:
-    myQueue(int queueCapacity=1000){
+    myQueue(int queueCapacity=1000) {
         queue = new T[queueCapacity];
         front = -1;
         rear = -1;
         capacity = queueCapacity;
     }
-    
     bool empty();
     T& Front();
     T& Rear();
@@ -40,22 +39,18 @@ T& myQueue<T>::Rear() {
 }
 
 template<class T>
-void myQueue<T>::Push(T &item)
-{
+void myQueue<T>::Push(T &item) {
     rear = (rear+1)%capacity;
     queue[rear] = item;
 }
 
 template<class T>
-void myQueue<T>::Pop()
-{
-    if (!empty())
-    {
+void myQueue<T>::Pop() {
+    if (!empty()) {
         front = (front+1)%capacity;
         queue[front].~T();
     }
 }
-
 
 int **matrix;
 bool **matrix_visited;
@@ -63,8 +58,7 @@ bool **matrix_visited;
 class node {
     friend class myTree;
 public:
-    node(int num)
-    {
+    node(int num) {
         number = num; left = NULL; right = NULL; up = NULL; down = NULL;
     }
     void insert(node* parent, int num, std::string dir);
@@ -86,8 +80,7 @@ void myTree::levelorder() {
     myQueue<node*> q;
     node *cur = root;
     
-    while (cur)
-    {
+    while (cur) {
         std::cout << cur->number;
         if (cur->left) q.Push(cur->left);
         if (cur->down) q.Push(cur->down);
@@ -103,8 +96,7 @@ void myTree::levelorder() {
 
 
 void myTree::preorder(node* cur) {
-    if (cur)
-    {
+    if (cur) {
         if (cur != root) std::cout << " ";
         std::cout << cur->number;
         preorder(cur->left);
@@ -125,60 +117,45 @@ void myTree::postorder(node *cur) {
     }
 }
 
-void myTree::create(int num)
-{
+void myTree::create(int num) {
     node *newNode = new node(num);
     root = newNode;
 }
 
-void node::insert(node *parent, int num, std::string dir)
-{
+void node::insert(node *parent, int num, std::string dir) {
     node *newnode = new node(num);
     if (dir == "r")
-    {
         parent->right = newnode;
-    } else if (dir == "l")
-    {
+    else if (dir == "l")
         parent->left = newnode;
-    } else if (dir == "u")
-    {
+    else if (dir == "u")
         parent->up = newnode;
-    } else if (dir == "d")
-    {
+    else if (dir == "d")
         parent->down = newnode;
-    }
 }
 
-void growTree(node *parent, int x, int y, int width, int height)
-{
+void growTree(node *parent, int x, int y, int width, int height) {
     int new_x, new_y;
     
     new_x = x+1;        //right
     new_y = y;
     
-    if ((new_x < width) && (new_x >= 0) && (new_y < height) && (new_y >= 0))
-    {
-        if (matrix[new_y][new_x] != 0)
-        {
-            if (!matrix_visited[new_y][new_x])
-            {
+    if ((new_x < width) && (new_x >= 0) && (new_y < height) && (new_y >= 0)) {
+        if (matrix[new_y][new_x] != 0) {
+            if (!matrix_visited[new_y][new_x]) {
                 parent->insert(parent,matrix[new_y][new_x],"r");
                 matrix_visited[new_y][new_x] = true;
                 growTree(parent->right, new_x, new_y, width, height);
             }
         }
     }
-    
 
     new_x = x-1;        //left
     new_y = y;
     
-    if ((new_x < width) && (new_x >= 0) && (new_y < height) && (new_y >= 0))
-    {
-        if (matrix[new_y][new_x] != 0)
-        {
-            if (!matrix_visited[new_y][new_x])
-            {
+    if ((new_x < width) && (new_x >= 0) && (new_y < height) && (new_y >= 0)) {
+        if (matrix[new_y][new_x] != 0) {
+            if (!matrix_visited[new_y][new_x]) {
                 parent->insert(parent,matrix[new_y][new_x], "l");
                 matrix_visited[new_y][new_x] = true;
                 growTree(parent->left, new_x, new_y, width, height);
@@ -189,12 +166,9 @@ void growTree(node *parent, int x, int y, int width, int height)
     new_x = x;      //up
     new_y = y-1;
     
-    if ((new_x < width) && (new_x >= 0) && (new_y < height) && (new_y >= 0))
-    {
-        if (matrix[new_y][new_x] != 0)
-        {
-            if (!matrix_visited[new_y][new_x])
-            {
+    if ((new_x < width) && (new_x >= 0) && (new_y < height) && (new_y >= 0)) {
+        if (matrix[new_y][new_x] != 0) {
+            if (!matrix_visited[new_y][new_x]) {
                 parent->insert(parent,matrix[new_y][new_x], "u");
                 matrix_visited[new_y][new_x] = true;
                 growTree(parent->up, new_x, new_y, width, height);
@@ -205,12 +179,9 @@ void growTree(node *parent, int x, int y, int width, int height)
     new_x = x;      //down
     new_y = y+1;
     
-    if ((new_x < width) && (new_x >= 0) && (new_y < height) && (new_y >= 0))
-    {
-        if (matrix[new_y][new_x] != 0)
-        {
-            if (!matrix_visited[new_y][new_x])
-            {
+    if ((new_x < width) && (new_x >= 0) && (new_y < height) && (new_y >= 0)) {
+        if (matrix[new_y][new_x] != 0) {
+            if (!matrix_visited[new_y][new_x]) {
                 parent->insert(parent,matrix[new_y][new_x],"d");
                 matrix_visited[new_y][new_x] = true;
                 growTree(parent->down, new_x, new_y, width, height);
@@ -218,20 +189,15 @@ void growTree(node *parent, int x, int y, int width, int height)
             }
         }
     }
-    
 }
 
 int main(int argc, const char * argv[]) {
-    //freopen("/Users/loyihsu/Dropbox/Assignments/Data Structure: HW4/input.in", "r", stdin);
-    
-    int i, j, width, height, numOfMatrice;
-    int starting_x, starting_y;
+    int i, j, width, height, numOfMatrice, starting_x, starting_y;
     std::string traverseMode;
     
     std::cin >> numOfMatrice;
     
-    while (numOfMatrice--)
-    {
+    while (numOfMatrice--) {
         myTree tree;
         std::cin >> width;
         std::cin >> height;
@@ -242,16 +208,13 @@ int main(int argc, const char * argv[]) {
         matrix = new int*[height];        //alloc
         matrix_visited = new bool*[height];
         
-        for (i = 0; i < height; i++)
-        {
+        for (i = 0; i < height; i++) {
             matrix[i] = new int[width];
             matrix_visited[i] = new bool[width];
         }
         
-        for (i = 0; i < height; i++)
-        {
-            for (j = 0; j < width; j++)
-            {
+        for (i = 0; i < height; i++) {
+            for (j = 0; j < width; j++) {
                 std::cin >> matrix[i][j];
                 matrix_visited[i][j] = false;
             }
@@ -264,25 +227,20 @@ int main(int argc, const char * argv[]) {
         
         growTree(tree.root, starting_x, starting_y, width, height);
         
-        if (traverseMode == "Level-order-traversal")
-        {
+        if (traverseMode == "Level-order-traversal") {
             tree.levelorder();
-        } else if (traverseMode == "Pre-order-traversal")
-        {
+        } else if (traverseMode == "Pre-order-traversal") {
             tree.preorder(tree.root);
-        } else if (traverseMode == "Post-order-traversal")
-        {
+        } else if (traverseMode == "Post-order-traversal") {
             tree.postorder(tree.root);
         }
         
         std::cout << std::endl;
         
-        for (i = 0; i < height; i++)        //de_alloc
-        {
+        for (i = 0; i < height; i++) {      //de_alloc
             delete[] matrix[i];
             delete[] matrix_visited[i];
         }
-        
         delete[] matrix;
         delete[] matrix_visited;
     }
