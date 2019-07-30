@@ -147,32 +147,26 @@ int main(int argc, const char * argv[]) {
     std::cin >> numOfGroups;
     std::cout << numOfGroups << std::endl;
     
-    while (numOfGroups--)
-    {
+    while (numOfGroups--) {
         swaps = 0;
         std::cin >> numOfMolecules;
         list = new struct element [numOfMolecules];
         
-        for (i = 0; i < numOfMolecules; i++)
-        {
+        for (i = 0; i < numOfMolecules; i++) {
             std::cin >> list[i].name;
             std::cin >> list[i].formula;
             std::cin >> list[i].mass;
         }
         
         for (i = 0; i < numOfMolecules; i++)
-        {
            if (!list[i].mass)
                list[i].mass = calculate(list[i].formula);
-        }
         
         quickSort(list, 0, numOfMolecules-1);
         
         std::cout << numOfMolecules << std::endl;
         
-        for (i = 0; i < numOfMolecules; i++)
-        {
-            
+        for (i = 0; i < numOfMolecules; i++) {
             std::cout << std::resetiosflags(std::ios::adjustfield);
             std::cout << std::setiosflags(std::ios::left);
             
@@ -192,10 +186,8 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-void swap(struct element *list, int i, int j)
-{
-    if (i != j)
-    {
+void swap(struct element *list, int i, int j) {
+    if (i != j) {
         struct element temp;
         
         temp.name = list[i].name;
@@ -214,16 +206,13 @@ void swap(struct element *list, int i, int j)
     }
 }
 
-void quickSort(struct element *list, int low, int high)
-{
-    if (low < high)
-    {
+void quickSort(struct element *list, int low, int high) {
+    if (low < high){
         double pivot = list[low].mass;
         int i = low;
         int j = high;
         
-        while (i != j)
-        {
+        while (i != j){
             while (list[j].mass >= pivot && i < j)
                 j--;
             while (list[i].mass <= pivot && i < j)
@@ -238,30 +227,24 @@ void quickSort(struct element *list, int low, int high)
     }
 }
 
-double calculate(std::string formula)
-{
+double calculate(std::string formula) {
     int i=0, j=0, count_open, count_close;
     double output=0, newElement=0;
     std::string temp;
     
     int for_length = (int)formula.length();
     
-    while (i < for_length)
-    {
-        if (formula[i] == '(')
-        {
+    while (i < for_length) {
+        if (formula[i] == '(') {
             count_open = 1;
             count_close = 0;
             i++;
             j = i;
             
-            while (1)
-            {
-                if (formula[j] == '(')
-                {
+            while (1) {
+                if (formula[j] == '(') {
                     count_open++;
-                } else if (formula[j] == ')')
-                {
+                } else if (formula[j] == ')') {
                     if (count_open == count_close+1)
                         break;
                     else {
@@ -279,12 +262,9 @@ double calculate(std::string formula)
             
             temp.clear();
             
-            if (isdigit(formula[i+1]))
-            {
+            if (isdigit(formula[i+1])) {
                 while (isdigit(formula[++i]))
-                {
                     temp.push_back(formula[i]);
-                }
                 
                 int number;
                 sscanf(temp.c_str(), "%d", &number);
@@ -293,26 +273,21 @@ double calculate(std::string formula)
                 i++;
             }
             
-        } else if (formula[i] == '[')
-        {
+        } else if (formula[i] == '[') {
             count_open = 1;
             count_close = 0;
             
             i++;
             j = i;
             
-            while (1)
-            {
-                if (formula[j] == '[')
-                {
+            while (1) {
+                if (formula[j] == '[') {
                     count_open++;
-                } else if (formula[j] == ']')
-                {
+                } else if (formula[j] == ']') {
                     if (count_open == count_close+1)
                         break;
-                    else {
+                    else
                         count_close++;
-                    }
                 }
                 j++;
             }
@@ -325,12 +300,9 @@ double calculate(std::string formula)
             
             temp.clear();
             
-            if (isdigit(formula[i+1]))
-            {
+            if (isdigit(formula[i+1])) {
                 while (isdigit(formula[++i]))
-                {
                     temp.push_back(formula[i]);
-                }
                 
                 int number;
                 sscanf(temp.c_str(), "%d", &number);
@@ -339,22 +311,17 @@ double calculate(std::string formula)
                 i++;
             }
             
-        } else if (isupper(formula[i]))
-        {
+        } else if (isupper(formula[i])) {
             temp.clear();
             temp.push_back(formula[i]);
             
-            if (!islower(formula[i+1]) && !isdigit(formula[i+1]))
-            {
+            if (!islower(formula[i+1]) && !isdigit(formula[i+1])) {
                 newElement = period[temp];
                 i++;
             } else {
-                if (islower(formula[i+1]))
-                {
+                if (islower(formula[i+1])) {
                     while (islower(formula[++i]))
-                    {
                         temp.push_back(formula[i]);
-                    }
                 } else {
                     i++;
                 }
@@ -363,10 +330,8 @@ double calculate(std::string formula)
                 
                 temp.clear();
                 
-                if (isdigit(formula[i]))
-                {
-                    while (isdigit(formula[i]))
-                    {
+                if (isdigit(formula[i])) {
+                    while (isdigit(formula[i])) {
                         temp.push_back(formula[i]);
                         i++;
                     }
@@ -375,10 +340,7 @@ double calculate(std::string formula)
                     newElement *= number;
                 }
             }
-            
-            
         }
-        
         output += newElement;
     }
      
