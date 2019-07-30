@@ -5,18 +5,18 @@ NTHU-OldJay includes the solutions I can find or reproduce (if missing) to the o
 Steps of this project:
 
 1. [x] Importing all the codes from 2015~2018 that I have ever submitted to OJ.
-2. [ ] Improving the implementation by editing and retesting it on the OJ to make sure the codes work.
+2. [x] Improving the implementation by editing and retesting it on the OJ to make sure the codes work.
     1. [x] I2P (I)
     2. [x] I2P (II)
-    3. [ ] Data Structure
+    3. [x] Data Structure
     4. [x] Others
-3. [ ] Move everything out of the folders
+3. [x] Move everything out of the folders
 
 If something goes wrong please let me know, I will look into it. You are free to use any of the codes of NTHU-OldJay.
 
 ## Missing list
 
-The following are the list of codes that are missing or stored at a place not accessible to me. These problems may need to be solved again.
+The following are the list of codes that are missing or stored at a place not accessible to me. If the questions are still complete, reproducing the codes may be attempted.
 
 * [ ] [11865 - Number Maze](http://140.114.86.238/problem/11865)
 * [ ] [11923 - All Pair Shortest Paths](http://140.114.86.238/problem/11923)
@@ -24,8 +24,6 @@ The following are the list of codes that are missing or stored at a place not ac
 
 ### Intro to Programming (I) labs
 
-* [Lab 0](http://140.114.86.238/contest/588/)
-  * [x] [1000 - The A+B Problem](http://140.114.86.238/problem/1000)
 * [Lab 1](http://140.114.86.238/contest/815/)
   * [ ] [10728 - A simple set problem](http://140.114.86.238/problem/10728)
 * [Lab 2](http://140.114.86.238/contest/826/)
