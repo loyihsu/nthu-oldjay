@@ -29,7 +29,7 @@ The following are the list of codes that are missing or stored at a place not ac
 * [Lab 2](http://140.114.86.238/contest/826/)
   * [x] [10741 - The Encoded Word](http://140.114.86.238/problem/10741)
 * [Lab 3](http://140.114.86.238/contest/831/)
-  * [ ] [10766 - Shell Game](http://140.114.86.238/problem/10766)
+  * [x] [10766 - Shell Game](http://140.114.86.238/problem/10766)
 * [Lab 4](http://140.114.86.238/contest/839/)
   * [ ] [10767 - Find the maximum/minimum values](http://140.114.86.238/problem/10767)
 * [Lab 5](http://140.114.86.238/contest/850/)
