@@ -31,7 +31,7 @@ The following are the list of codes that are missing or stored at a place not ac
 * [Lab 3](http://140.114.86.238/contest/831/)
   * [x] [10766 - Shell Game](http://140.114.86.238/problem/10766)
 * [Lab 4](http://140.114.86.238/contest/839/)
-  * [ ] [10767 - Find the maximum/minimum values](http://140.114.86.238/problem/10767)
+  * [x] [10767 - Find the maximum/minimum values](http://140.114.86.238/problem/10767)
 * [Lab 5](http://140.114.86.238/contest/850/)
   * [x] [10768 - wave](http://140.114.86.238/problem/10768)
 * [Lab 6](http://140.114.86.238/contest/866/)
